@@ -1,21 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>raj rawat</title>
-    <link rel="stylesheet" href="style.css">
+<style>
+  /* Base Font Settings */
+  body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #1a1a1a; /* Dark background to make the colors pop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  /* THE BRAND GRADIENT CLASS */
+  .airawat-gradient {
+    font-size: 3.5rem;
+    font-weight: 800;
+    
+    /* The Magic: Linear Gradient from Tech Orange to Spiritual Purple */
+    background: linear-gradient(90deg, #FF8C00 0%, #FF2E63 45%, #6A0DAD 100%);
+    
+    /* Clip the background to the text shape */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* Make the text fill transparent so the background shows through */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback */
+    
+    /* Optional: Letter spacing for that 'Cinematic' Tech look */
+    letter-spacing: -0.02em;
+  }
+
+  /* Optional: Subtitle style */
+  .tagline {
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: 300;
+    text-align: center;
+  }
+  
+  .container {
+    text-align: center;
+  }
+</style>
 </head>
 <body>
-    <header>
-        <span>Deep Learning</span> | <span>Deep Meditation</span> | <span>Deep Space</span>
-    </header>
-    <main>
-        <p>!</p>
-    </main>
-    <footer>
-        <p>&copy; 2025 Raj Rawat</p>
-    </footer>
-    <script src="script.js"></script>
+
+<div class="container">
+  <div class="airawat-gradient">
+    AI • CONSCIOUSNESS • TRUTH
+  </div>
+  <div class="tagline">
+    Bridging silicon logic with spiritual insight.
+  </div>
+</div>
+
 </body>
 </html>
