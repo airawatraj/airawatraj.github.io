@@ -8,13 +8,13 @@
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/airawatraj/airawatraj.github.io/refs/heads/main/assets/airawatraj-logo.png">
     
     <style>
-        /* --- 1. CORE VARIABLES & RESET --- */
+        /* --- CORE VARIABLES --- */
         :root {
-            --bg-color: #050505;       /* Deep Black */
-            --text-main: #f0f0f0;      /* Off-White */
-            --text-muted: #a0a0a0;     /* Grey */
-            --accent-orange: #FF8C00;  /* Silicon/Logic */
-            --accent-purple: #6A0DAD;  /* Spirit/Soul */
+            --bg-color: #050505;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a0;
+            --accent-orange: #FF8C00;
+            --accent-purple: #6A0DAD;
             --card-bg: #111111;
         }
 
@@ -32,9 +32,8 @@
         }
 
         a { text-decoration: none; color: inherit; transition: 0.2s; }
-        a:hover { color: var(--accent-orange); }
-
-        /* --- 2. TYPOGRAPHY & GRADIENTS --- */
+        
+        /* --- TYPOGRAPHY --- */
         h1, h2, h3 { font-weight: 700; letter-spacing: -0.03em; }
         
         .gradient-text {
@@ -52,19 +51,15 @@
             margin: 1rem 0 2rem 0;
         }
 
-        /* --- 3. LAYOUT CONTAINERS --- */
+        /* --- LAYOUT --- */
         .container {
             width: 90%;
             max-width: 900px; 
             padding: 40px 20px;
         }
 
-        header {
-            text-align: center;
-            padding: 60px 0 40px;
-        }
+        header { text-align: center; padding: 60px 0 40px; }
 
-        /* --- 4. PROFILE IMAGE --- */
         .profile-img {
             width: 150px;
             height: 150px;
@@ -75,12 +70,12 @@
             box-shadow: -5px -5px 20px rgba(255, 140, 0, 0.2), 5px 5px 20px rgba(106, 13, 173, 0.2);
         }
 
-        /* --- 5. SECTIONS --- */
+        /* --- SECTIONS --- */
         section { margin-bottom: 70px; }
 
         .section-title {
             font-size: 0.85rem;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--text-muted);
@@ -89,13 +84,9 @@
             display: inline-block;
         }
 
-        .hero-text {
-            font-size: 1.8rem;
-            line-height: 1.4;
-            margin-bottom: 20px;
-        }
+        .hero-text { font-size: 1.8rem; line-height: 1.4; margin-bottom: 20px; }
 
-        /* --- 6. THE TRUTH LAB (GRID) --- */
+        /* --- LAB GRID --- */
         .lab-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -107,42 +98,24 @@
             padding: 25px;
             border-radius: 12px;
             border: 1px solid #222;
-            transition: transform 0.2s ease;
         }
-
-        .lab-card:hover {
-            transform: translateY(-3px);
-            border-color: #333;
-        }
-
         .lab-icon { font-size: 1.5rem; margin-bottom: 10px; display: block; }
         .lab-title { font-size: 1.1rem; margin-bottom: 8px; color: #fff; }
         .lab-desc { font-size: 0.95rem; color: var(--text-muted); }
 
-        /* --- 7. BUTTONS --- */
-        .links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        /* --- LINKS & BUTTONS --- */
+        .links { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
 
         .btn {
             padding: 12px 25px;
             border-radius: 50px;
             font-size: 0.95rem;
             font-weight: 600;
-            transition: transform 0.2s ease, opacity 0.2s ease;
             border: 1px solid #333;
             color: #f0f0f0;
             background: transparent;
         }
-
-        .btn:hover {
-            background: #fff;
-            color: #000;
-            transform: translateY(-2px);
-        }
+        .btn:hover { background: #fff; color: #000; transform: translateY(-2px); }
 
         .btn-primary {
             border: none;
@@ -151,31 +124,55 @@
             box-shadow: 0 4px 15px rgba(106, 13, 173, 0.3); 
         }
 
-        .btn-primary:hover {
-            opacity: 0.9; 
-            color: white;
-            background: linear-gradient(90deg, #FF8C00 0%, #FF2E63 50%, #6A0DAD 100%);
+        /* --- COGNI VISION CARD --- */
+        .vision-card {
+            background: #111;
+            border: 1px solid #333;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 40px;
+            transition: 0.3s;
+        }
+        .vision-card:hover { border-color: var(--accent-orange); }
+        
+        .vision-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 30px;
+            background: var(--accent-orange);
+            color: #000;
+            font-weight: 700;
+            border-radius: 50px;
         }
 
-        /* --- 8. PROJECT LIST (NEW) --- */
+        /* --- PROJECT LIST --- */
         .project-item {
-            margin-bottom: 30px;
-            padding-left: 15px;
-            border-left: 2px solid #333;
+            display: block; 
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #0a0a0a;
+            border-left: 3px solid #333;
+            border-radius: 0 8px 8px 0;
+            transition: all 0.2s;
+        }
+        
+        .project-item:hover {
+            background: #111;
+            border-left-color: var(--accent-orange);
+            transform: translateX(5px);
         }
         
         .project-meta {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--accent-orange);
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 5px;
         }
 
-        /* Mobile Tweaks */
         @media (max-width: 600px) {
             .gradient-text { font-size: 2rem; }
-            .hero-text { font-size: 1.4rem; }
         }
     </style>
 </head>
@@ -202,9 +199,9 @@
 
         <section>
             <div class="section-title">// MISSION</div>
-            <h3 style="margin-bottom: 10px; font-size: 1.4rem;">Liberating humans from mechanical repetition.</h3>
+            <h3 style="margin-bottom: 10px; font-size: 1.4rem;">Liberating humans from mechanical repetition...</h3>
             <p style="color: var(--text-muted); font-size: 1.1rem;">
-                "Robots are Hardware (Body). AI is Software (Mind). Only the Soul is Conscious."
+                ...to amplify consciousness. "Robots/BODY are Hardware. AI/MIND is Software. Only the Consciousness/Soul is the witness."
             </p>
         </section>
 
@@ -214,25 +211,17 @@
                 <div class="lab-card">
                     <span class="lab-icon">🧠</span>
                     <div class="lab-title">MIND LAB</div>
-                    <div class="lab-desc">
-                        Generative UI & Autonomous Agents. Logic that serves the user.
-                    </div>
+                    <div class="lab-desc">Generative UI & Autonomous Agents. Logic that serves the user.</div>
                 </div>
-
                 <div class="lab-card">
                     <span class="lab-icon">🦾</span>
                     <div class="lab-title">BODY LAB</div>
-                    <div class="lab-desc">
-                        Optimizing the vehicle—from Custom Robots to Sattvic Health.
-                    </div>
+                    <div class="lab-desc">Optimizing the vehicle—from Custom Robots to Sattvic Health.</div>
                 </div>
-
                 <div class="lab-card">
                     <span class="lab-icon">⚡️</span>
                     <div class="lab-title">SOUL LAB</div>
-                    <div class="lab-desc">
-                        Vipassana insights and Ancient Scripture. The Witness (Sakshi).
-                    </div>
+                    <div class="lab-desc">Vipassana insights and Ancient Scripture. The Witness (Sakshi).</div>
                 </div>
             </div>
         </section>
@@ -240,55 +229,49 @@
         <section>
             <div class="section-title">// VISION: THE COGNI ECOSYSTEM</div>
             
-            <div style="margin-bottom: 40px;">
-                <h3><a href="https://cogni.chat" target="_blank">Cogni.chat ↗</a></h3>
-                <p style="color: var(--text-muted); margin-top: 5px;">
-                    <strong>The Goal:</strong> A multimodal Edge AI system that manifests as Generative UI across platforms.
-                    <br><em>Status: Architecture Phase. Dream Goal: AGI integration.</em>
+            <div class="vision-card">
+                <h2 style="font-size: 2rem; margin-bottom: 10px;">Cogni.chat</h2>
+                <p style="color: var(--text-muted);">
+                    <strong>Future:</strong> A multimodal Edge AI system that manifests as Generative UI across platforms.<br>
+                    <em>Orchestrating Learn, Earn, Serve, Unite.</em>
                 </p>
-                <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.9rem;">
-                    Eventually orchestrating the 4 Purusharthas: 
-                    <span style="color: #fff;">Learn</span> (Dharma), 
-                    <span style="color: #fff;">Earn</span> (Artha), 
-                    <span style="color: #fff;">Serve</span> (Kama/Duty), 
-                    <span style="color: #fff;">Unite</span> (Moksha).
-                </p>
+                <a href="https://cogni.chat" target="_blank" class="vision-btn">EXPLORE VISION ↗</a>
             </div>
 
-            <div class="section-title">// ACTIVE MANIFESTATIONS</div>
+            <div class="section-title" style="margin-top: 20px;">// COMPANIONS FOR INTENTIONAL LIVING</div>
 
-            <div class="project-item">
+            <a href="https://cogni.chat" target="_blank" class="project-item">
                 <div class="project-meta">BROWSER EXTENSION • CHROME/FIREFOX</div>
-                <h3>Time Shield (Cogni Pomo)</h3>
+                <h3>Cogni Time Shield (Kavach) ↗</h3>
                 <p style="color: var(--text-muted);">
-                    A privacy-first Pomodoro timer that shields focus. "Focus with Intention." 
+                    Shield your most precious asset - Your Attention.
                 </p>
-            </div>
+            </a>
 
-            <div class="project-item">
+            <a href="https://cogni.chat" target="_blank" class="project-item">
                 <div class="project-meta">TABLET APP • ANDROID</div>
-                <h3>Prajna (Sadhana)</h3>
+                <h3>Cogni Prajna (Sadhana) ↗</h3>
                 <p style="color: var(--text-muted);">
-                    A distraction-free offline tablet interface for family meditation, study, and listening.
+                    Train your Mind. A dedicated interface for focus and insight.
                 </p>
-            </div>
+            </a>
 
-            <div class="project-item">
+            <a href="https://cogni.chat" target="_blank" class="project-item">
                 <div class="project-meta">MOBILE APP • AI VISION</div>
-                <h3>FoodWise / Sattvic</h3>
+                <h3>Cogni FoodWise AR (Sattvic) ↗</h3>
                 <p style="color: var(--text-muted);">
-                    Instant detection of Ultra Processed Foods (UPF). Simple "Green Thumbs Up" for sattvic choices.
+                    Scan if it's worth consuming. Discernment for the Body Lab.
                 </p>
-            </div>
+            </a>
 
-            <div class="project-item" style="border-left-color: var(--accent-purple);">
+            <a href="https://github.com/airawatraj/fiduciary-ops-agent" target="_blank" class="project-item" style="border-left-color: var(--accent-purple);">
                 <div class="project-meta">GOOGLE CAPSTONE • NOV 2025</div>
-                <h3>🛡️ Fiduciary Agent</h3>
+                <h3>🛡️ Fiduciary Agent (Demo) ↗</h3>
                 <p style="color: var(--text-muted);">
                     <strong>The Risk-Aware Orchestrator.</strong><br>
                     Brain: Gemini 2.5 Flash Lite. Hands: Python Governance.
                 </p>
-            </div>
+            </a>
 
         </section>
 
