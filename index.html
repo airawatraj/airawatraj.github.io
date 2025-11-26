@@ -84,7 +84,21 @@
             display: inline-block;
         }
 
-        .hero-text { font-size: 1.8rem; line-height: 1.4; margin-bottom: 20px; }
+        /* Hero Typography */
+        .hero-identity {
+            font-size: 1.4rem; 
+            font-weight: 700; 
+            color: #f0f0f0;
+            letter-spacing: 0.02em;
+            margin-bottom: 8px; /* Space between lines */
+        }
+        
+        .hero-tagline {
+            font-size: 1.1rem; 
+            font-weight: 300; 
+            color: var(--text-muted); /* Grey to separate it */
+            font-style: italic;       /* Adds a "Seeker" vibe */
+        }
 
         /* --- LAB GRID --- */
         .lab-grid {
@@ -194,10 +208,10 @@
             <h1 class="gradient-text" style="font-size: 2.5rem; line-height: 1.2;">AI • CONSCIOUSNESS • TRUTH</h1>
             <div class="gradient-border-bottom" style="margin: 20px auto;"></div>
             
-            <p class="hero-text">
-                Technologist. Experimenter. Seeker.<br>
-                <span style="font-weight: 300;">Bridging silicon logic with spiritual insight.</span>
-            </p>
+            <div class="hero-identity">Technologist. Experimenter. Seeker.</div>
+            <div class="hero-tagline">Bridging silicon logic with spiritual insight.</div>
+            
+            <div style="margin-bottom: 30px;"></div>
             
             <div class="links">
                 <a href="https://youtube.com/@airawatraj" class="btn btn-primary">YouTube</a>
@@ -214,7 +228,7 @@
             </h3>
 
             <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; border-left: 2px solid #333; padding-left: 15px;">
-                "Robots/BODY are Hardware. AI/MIND is Software. Only the Consciousness/Soul is the witness."
+                "Robots/BODY are Hardware. AI/MIND is Software. Only the Consciousness/SOUL is the witness."
             </p>
         </section>
 
