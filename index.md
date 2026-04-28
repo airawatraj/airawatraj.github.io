@@ -10,7 +10,7 @@ layout: home
 <br />
 
 <h2 class="post-list-heading">Certificates</h2>
-
+- [5-Day AI Agents Intensive Course with Google - Kaggle, Dec 2025](https://www.kaggle.com/certification/badges/airawatraj/105)
 - [Azure Data Scientist Associate - Microsoft, Oct 2021](https://www.credly.com/badges/2610f519-ea4c-47a1-bb5e-f175b07d39f4)
 - [Azure AI Engineer Associate - Microsoft, Sep 2021](https://www.credly.com/badges/76a934e8-729b-4919-8acb-047cccf132d9)
 - [Azure Developer Associate - Microsoft, Jun 2021](https://www.credly.com/badges/62edd8cf-a403-482c-a612-5f8a6907739a)
