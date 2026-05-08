@@ -1,45 +1,23 @@
 # airawatraj.github.io
 
-Personal portfolio and technical blog documenting deep dives into AI engineering, autonomous agents, and digital transformation. This repository serves as the "Proof of Work" foundation for my professional identity.
+The central hub for my technical blog and professional portfolio, documenting my work in AI engineering, autonomous agents, and digital transformation.
 
-## 🛠 Technology Stack
-- **Engine**: Jekyll 3.9.x
-- **Environment**: Ruby 3.1
-- **CI/CD**: GitHub Actions (Jekyll to Pages)
-- **Styling**: HTML5 / SASS
+## 🛠 Tech Stack
+- **Engine:** Jekyll 3.9.x
+- **Environment:** Ruby 3.3 (Optimized for GitHub Actions)
+- **Deployment:** Zero-touch CI/CD via GitHub Actions.
 
 ## 🚀 Deployment
-This site is automatically built and deployed via **GitHub Actions**. Every push to the `master` branch triggers a build using Ruby 3.1 and installs dependencies via Bundler, including compatibility fixes for `webrick`.
+This site is a pure "Cloud-Direct" implementation. Every push to the `master` branch is automatically built and deployed by GitHub. 
 
-## 💻 Local Development
-To run this blog on your local machine (e.g., your DGX Spark or MacBook):
+- **Build Runner:** Ubuntu-latest / Node 24
+- **Status:** Check the [Actions tab](https://github.com/airawatraj/airawatraj.github.io/actions) for real-time build telemetry.
 
-### Prerequisites
-- Ruby 3.1 or higher
-- Bundler
+## 💻 Local Development (Optional)
+If you need to preview content on your DGX Spark or local machine:
 
-### Installation & Usage
+1. **Install:** `bundle install`
+2. **Serve:** `bundle exec jekyll serve`
 
-   ```bash
-   # Clone the repository
-   git clone [https://github.com/airawatraj/airawatraj.github.io.git](https://github.com/airawatraj/airawatraj.github.io.git)
-
-   # Install dependencies
-   bundle install
-
-   # Serve the site:
-   bundle exec jekyll serve
-```
-   Access your local instance at http://127.0.0.1:4000/
-
-## 📂 Content Sections
-
-- Technical Blog: Insights into AI, Robotics, and Microsoft ecosystems.
-
-- Certificates: Documented history from Google/Kaggle, Stanford, and Microsoft.
-
-- Awards: Recognition for Digital Transformation and Automation.
-
-
-
-> technologist | experimenter | seeker
+---
+*"the future belongs to those who understand at a very deep level how to combine their unique expertise with what algorithms do best"*
