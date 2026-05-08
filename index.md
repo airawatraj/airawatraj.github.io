@@ -28,7 +28,7 @@ layout: home
 - Gem of the Year 2018 - Espire Infolabs, Jan 2019
 - Automation Champion  - Espire Infolabs, Jan 2017
 
-<h2 class="post-list-heading">Blogs</h2>
+<h2 class="post-list-heading">Archives</h2>
 
 - [Microsoft](https://worksmartz.wordpress.com/)
 - [Robotics](https://rawatlabz.wordpress.com/)
