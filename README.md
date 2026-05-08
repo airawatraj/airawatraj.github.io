@@ -1,30 +1,45 @@
 # airawatraj.github.io
 
-## About. 
-- Backend for airawatraj.github.io
+Personal portfolio and technical blog documenting deep dives into AI engineering, autonomous agents, and digital transformation. This repository serves as the "Proof of Work" foundation for my professional identity.
 
-## Technology.
-- GitHub Pages
-    - Ruby (Gems: Jekyll, Bundler)
-    - HTML
-    - SASS
+## 🛠 Technology Stack
+- **Engine**: Jekyll 3.9.x
+- **Environment**: Ruby 3.1
+- **CI/CD**: GitHub Actions (Jekyll to Pages)
+- **Styling**: HTML5 / SASS
 
-## Deployment.
-1. Auto deployment
-    - GitHub Pages rebuilds and serves the site for any changes pushed to the master branch.
+## 🚀 Deployment
+This site is automatically built and deployed via **GitHub Actions**. Every push to the `master` branch triggers a build using Ruby 3.1 and installs dependencies via Bundler, including compatibility fixes for `webrick`.
 
-2. Local Dev Setup - Optional
+## 💻 Local Development
+To run this blog on your local machine (e.g., your DGX Spark or MacBook):
 
-    ```
-    # Install
-    gem install github-pages 
+### Prerequisites
+- Ruby 3.1 or higher
+- Bundler
 
-    # Clone.
-    git clone https://github.com/rasinraw/rasinraw.github.io.git
+### Installation & Usage
 
-    # Serve.
-    jekyll serve
+   ```bash
+   # Clone the repository
+   git clone [https://github.com/airawatraj/airawatraj.github.io.git](https://github.com/airawatraj/airawatraj.github.io.git)
 
-    # Browse.
-    xdg-open http://127.0.0.1:4000/
-    ```
+   # Install dependencies
+   bundle install
+
+   # Serve the site:
+   bundle exec jekyll serve
+```
+   Access your local instance at http://127.0.0.1:4000/
+
+## 📂 Content Sections
+
+- Technical Blog: Insights into AI, Robotics, and Microsoft ecosystems.
+
+- Certificates: Documented history from Google/Kaggle, Stanford, and Microsoft.
+
+- Awards: Recognition for Digital Transformation and Automation.
+
+
+
+> technologist | experimenter | seeker
