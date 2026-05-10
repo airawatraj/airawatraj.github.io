@@ -18,7 +18,7 @@
   --text:#1a1a1e;
   --muted:#636366;
   
-  /* Timeline Differentiation Colors */
+  /* Color Coding */
   --glass-exp: rgba(157, 124, 42, 0.08);
   --glass-cert: rgba(0, 113, 227, 0.06);
   --glass-award: rgba(26, 26, 30, 0.05);
@@ -58,6 +58,7 @@ nav{
 .hero h1 em{ font-style:italic; color:var(--gold); }
 .hero-sub{ font-size:1.05rem; color:var(--muted); max-width:520px; margin-bottom:3rem; opacity:0; animation:fadeUp 0.8s 0.35s forwards; }
 .hero-links{ display:flex; gap:1rem; flex-wrap:wrap; opacity:0; animation:fadeUp 0.8s 0.5s forwards; }
+
 .btn{ display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.25rem; border:0.5px solid var(--border-light); border-radius:4px; font-size:13px; font-family:'DM Mono',monospace; text-decoration:none; color:var(--muted); transition: all 0.2s; }
 .btn:hover{ border-color: var(--gold); color: var(--gold); background: rgba(157,124,42,0.05); }
 
@@ -91,41 +92,40 @@ section{padding:6rem 0; border-top:0.5px solid var(--border)}
 .tag{ font-family:'DM Mono',monospace; font-size:10px; padding:2px 8px; border:0.5px solid var(--border-light); color:var(--muted); text-transform:uppercase; }
 .project-title{ font-size:1.1rem; margin-bottom:0.5rem; color:var(--text); font-weight: 400; display:flex; align-items:center; gap:10px;}
 .project-desc{ font-size:0.9rem; color:var(--muted); line-height:1.6; }
-.project-link{ display:inline-flex; align-items:center; gap:4px; font-family:'DM Mono',monospace; font-size:11px; color:var(--gold); text-decoration:none; margin-top:1rem; }
+.project-link{ display:inline-flex; align-items:center; gap:4px; font-family:'DM Mono',monospace; font-size:11px; color:var(--gold); text-decoration:none; margin-top:1rem; border-bottom: 1px solid transparent; transition: border 0.2s; }
+.project-link:hover { border-color: var(--gold); }
 
-/* Journey Timeline */
 .timeline-wrap { position: relative; max-width: 1000px; margin: 0 auto; padding: 2rem 0; }
 .timeline-spine { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--border-light); transform: translateX(-50%); z-index: 1; }
 
 .t-item { display: grid; grid-template-columns: 1fr 80px 1fr; margin-bottom: 4rem; position: relative; z-index: 2; }
 
-/* Differentiated Glass Boxes */
 .glass-box { 
     backdrop-filter: blur(25px) saturate(180%); 
     -webkit-backdrop-filter: blur(25px) saturate(180%); 
     border: 1px solid rgba(255, 255, 255, 0.6); 
     border-radius: 16px; padding: 1.75rem; 
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); 
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
     position: relative; z-index: 5;
 }
 
-.t-exp { background: rgba(255, 255, 255, 0.6); background-blend-mode: overlay; background-color: var(--glass-exp); }
-.t-cert { background: rgba(255, 255, 255, 0.6); background-blend-mode: overlay; background-color: var(--glass-cert); }
-.t-award { background: rgba(255, 255, 255, 0.6); background-blend-mode: overlay; background-color: var(--glass-award); }
+.t-exp { background: rgba(255, 255, 255, 0.85); background-blend-mode: overlay; background-color: var(--glass-exp); }
+.t-cert { background: rgba(255, 255, 255, 0.85); background-blend-mode: overlay; background-color: var(--glass-cert); }
+.t-award { background: rgba(255, 255, 255, 0.85); background-blend-mode: overlay; background-color: var(--glass-award); }
 
 .glass-box-link { text-decoration: none; display: block; color: inherit; cursor: pointer; }
-.glass-box-link:hover { transform: translateY(-6px); border-color: var(--gold); }
+.glass-box-link:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 15px 45px rgba(157, 124, 42, 0.15); }
 
 .t-content.left { text-align: right; grid-column: 1; }
 .t-content.right { text-align: left; grid-column: 3; }
 .t-content.center { grid-column: 1 / span 3; max-width: 680px; margin: 0 auto; text-align: center; }
 
 .t-marker { grid-column: 2; display: flex; justify-content: center; align-items: flex-start; padding-top: 2.5rem; position: relative; z-index: 10; }
-.t-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--border-light); z-index: 2; }
-.t-dot.exp { background: var(--gold); }
-.t-dot.cert { background: #0071e3; }
-.t-dot.award { background: #1a1a1e; }
+.t-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 2px solid var(--border-light); z-index: 2; }
+.t-dot.exp { background: var(--gold); border-color: var(--gold); }
+.t-dot.award { background: #1a1a1e; border-color: #1a1a1e; }
+.t-dot.cert { border: 2.5px solid var(--cert-color); }
 
 .t-date { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold-dim); margin-bottom: 8px; }
 .t-tag { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; display: block; }
@@ -137,17 +137,18 @@ section{padding:6rem 0; border-top:0.5px solid var(--border)}
 .t-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; margin-top: 12px; }
 
 .verify-link { 
-    display: inline-block; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold-dim); 
-    text-decoration: none; margin-top: 14px; opacity: 0.7;
+    display: inline-block; font-family: 'DM Mono', monospace; font-size: 11px; color: #0071e3; 
+    text-decoration: none; margin-top: 14px; border-bottom: 1px solid transparent; transition: 0.2s;
 }
-.verify-link:hover { opacity: 1; color: var(--gold); }
+.verify-link:hover { border-bottom-color: #0071e3; color: var(--gold); }
 
 #mission { text-align: center; background: var(--surface); padding: 8rem 0; }
 #mission blockquote { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.6rem; color: var(--text); margin-bottom: 2rem; }
 
 footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border); }
-.footer-links{ display:flex; justify-content:center; gap:1.5rem; margin-top:1rem; }
+.footer-links{ display:flex; justify-content:center; gap:1.5rem; margin-top:1rem; flex-wrap: wrap; }
 .footer-links a{ font-family:'DM Mono',monospace; font-size:11px; color:var(--muted); text-decoration:none; }
+.footer-links a:hover{ color: var(--gold); }
 
 @keyframes fadeUp{ from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 .fade-in{ opacity:0; transform:translateY(16px); transition:all 0.8s ease; }
@@ -270,7 +271,7 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         <div class="t-content center">
             <div class="glass-box t-exp" style="border-top: 3px solid var(--gold);">
                 <p class="t-date">2021 — PRESENT</p>
-                <p class="t-title"><span class="ai-spark">✓</span> Tribe Lead · Digital Strategy & R&D</p>
+                <p class="t-title">Tribe Lead · Digital Strategy & R&D</p>
                 <p class="t-sub">Chemist Warehouse (ASX:SIG) · Melbourne</p>
                 <p class="t-desc">Directing MACH transformation and sovereign AI strategy on DGX Spark infrastructure.</p>
             </div>
@@ -420,6 +421,7 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
   <div class="container">
     <p class="footer-name" style="font-family:'DM Serif Display',serif; font-style:italic; font-size:1.2rem; color:var(--gold);">Rajendra Rawat</p>
     <div class="footer-links">
+      <a href="Rajendra_Rawat_CV.pdf" download>Download CV</a>
       <a href="https://github.com/airawatraj">GitHub</a>
       <a href="https://www.linkedin.com/in/airawatraj">LinkedIn</a>
       <a href="https://www.kaggle.com/airawatraj">Kaggle</a>
