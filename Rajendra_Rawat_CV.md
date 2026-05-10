@@ -1,13 +1,16 @@
+
+
 # Rajendra Rawat
-**AI Engineering & Strategy**
-Melbourne, Australia | [GitHub](https://github.com/airawatraj) | [LinkedIn](https://www.linkedin.com/in/airawatraj) | [Kaggle](https://www.kaggle.com/airawatraj)
+**Agentic AI · Digital Transformation · Strategic Engineering Leader @ Chemist Warehouse**
+Melbourne, Australia | [GitHub](https://github.com/airawatraj) | [LinkedIn](https://www.linkedin.com/in/airawatraj) | [Kaggle](https://www.kaggle.com/airawatraj) | [Website](https://airawatraj.github.io/)
 
 ---
 
-## Vision
-> "To free humans from becoming machines, and be more Humane."
->
-> My mission is to raise human intelligence and consciousness to its full potential via automation and sovereign AI.
+## About
+
+Strategic technology leader with nearly two decades of global experience across 20+ verticals including Education and Retail. Operated across North America, EMEA, and APAC, currently based in Australia. I bridge hands-on AI engineering and executive strategy - having advised CIOs, led enterprise-scale digital transformation, and independently built production-grade agentic AI systems. 
+
+I have been building AI systems since 2015 (7 years before the ChatGPT wave) from enterprise conversational AI at scale to training language models from scratch and deploying hardened autonomous agents on sovereign local infrastructure.
 
 ---
 
