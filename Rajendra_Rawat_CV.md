@@ -40,7 +40,7 @@ Check-then-Act protocol via Gemini 2.5 Flash Lite. Enforces real-time fiduciary 
 ### 2021 — PRESENT
 **✅ Tribe Lead · Digital Strategy & R&D**
 *Chemist Warehouse (ASX:SIG) · Melbourne*
-Directing MACH transformation and sovereign AI strategy on DGX Spark infrastructure.
+Spearheaded MACH transformation; currently shaping AI strategy
 
 ### 2018 — 2020
 **✅ Technical Program Lead**
