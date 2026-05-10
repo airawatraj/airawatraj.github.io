@@ -4,23 +4,25 @@ Melbourne, Australia | [GitHub](https://github.com/airawatraj) | [LinkedIn](http
 
 ---
 
-## Mission
+## Vision
 > "To free humans from becoming machines, and be more Humane."
-> 
+>
 > My mission is to raise human intelligence and consciousness to its full potential via automation and sovereign AI.
 
 ---
 
-## Active Builds
+## Independent Research & Projects
 
 ### ✅ COGNI-BRAIN
 **Hardened agentic deployment on DGX Spark**
-Nemotron-3-Super-120B running at 23.2 TPS with NemoHermes inside an OpenShell kernel-level sandbox. No cloud, no data leak.
+Nemotron-3-Super-120B running at 23.2 TPS with NemoHermes inside an OpenShell kernel-level sandbox. No cloud, no data leaving the building.
 - [View Repository](https://github.com/airawatraj/dgx-spark-nemotron-super-agent)
+
+Demonstrates sovereign AI deployment pattern applicable to regulated industries where data cannot leave organisational boundaries.
 
 ### ✅ SAGE-GPT
 **Sanskrit SLM trained entirely from scratch on DGX Spark**
-7.5M parameter decoder-only Transformer trained on ~140M Sanskrit tokens. Grokking strategy induced for genuine generalization.
+7.5M parameter decoder-only Transformer trained on ~140M Sanskrit tokens. Grokking strategy induced for genuine generalisation.
 - [View Repository](https://github.com/airawatraj/sage-gpt)
 
 ### ✅ COGNI.CHAT
@@ -35,27 +37,28 @@ Check-then-Act protocol via Gemini 2.5 Flash Lite. Enforces real-time fiduciary 
 
 ---
 
-## The Journey
+## Work Experience
 
 ### 2021 — PRESENT
 **✅ Tribe Lead · Digital Strategy & R&D**
-*Chemist Warehouse (ASX:SIG) · Melbourne*
-Spearheaded MACH transformation; currently shaping AI strategy
+*Chemist Warehouse · Melbourne*
+Led 3-year re-platform of legacy e-commerce to modern cloud MACH architecture. Contributing to AI readiness and agentic AI research within the R&D function.
 
 ### 2018 — 2020
-**✅ Technical Program Lead**
-*ACU (via Espire) · Melbourne*
-Advisor to CIO. Led global cloud transformation resulting in Microsoft Global Case Studies.
+**✅ Technical Program Lead · Advisor to CIO**
+*Australian Catholic University (via Espire) · Melbourne*
+Advisor to CIO across 8 global campuses. Deployed AVA conversational AI agent serving students university-wide. Delivered AI-driven campus transformation featured in 2 Microsoft Global Case Studies. Recipient of the Outstanding Contribution to Digital Transformation award.
 
 ### 2013 — 2021
-**✅ Director of Technology · Emerging Tech**
-*Espire Infolabs · Gurugram*
-Incubated multi-million dollar AI/IoT Centres of Excellence and pioneering R&D.
+**✅ Director of Technology · Microsoft & Emerging Tech**
+*Espire Infolabs · Gurugram, India*
+Reporting to CEO. Grew global Microsoft practice to multi-million dollar accounts while incubating AI/IoT Centres of Excellence. Architected the company's first enterprise AI chatbot in 2015 - predating the LLM wave by 7 years capability which evolved into commercial deployments at ACU and Victoria University bots.
+
 
 ### 2006 — 2013
 **Consultant**
-*Microsoft · Hyderabad*
-Architected mission-critical systems for Fortune Global 500: Chevron, Merck, Franklin Templeton.
+*Microsoft · Hyderabad, India*
+Architected mission-critical systems for Fortune Global 500: Chevron, Merck, Franklin Templeton, Aviva.
 
 ---
 
@@ -76,10 +79,6 @@ Architected mission-critical systems for Fortune Global 500: Chevron, Merck, Fra
 
 ## Awards
 
-- **✅ CIO Award** (2020) - *Australian Catholic University* | [View Verification](https://www.linkedin.com/feed/update/urn:li:activity:6680425215421497344/)
-- **✅ Gem of the Year** (2019 · 2018) - *Espire Infolabs*
-- **Automation Champion** (2017) - *Espire Infolabs*
-
----
-
-**✅ AI Verified:** Significant contribution to AI Engineering, Strategy, or Research.
+- **✅ Outstanding Contribution to Digital Transformation** (2020) · *Australian Catholic University* | [View](https://www.linkedin.com/feed/update/urn:li:activity:6680425215421497344/)
+- **Gem of the Year** (2019 · 2018) · *Espire Infolabs*
+- **Automation Champion** (2017) · *Espire Infolabs*
