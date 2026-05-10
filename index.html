@@ -10,403 +10,155 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --bg:#fcfcfc;
-  --surface:#f5f5f7;
+  --surface:rgba(245, 245, 247, 0.9);
   --border:#e5e5e7;
-  --border-light:#d1d1d6;
+  --border-light:rgba(209, 209, 214, 0.5);
   --gold:#9d7c2a; 
   --gold-dim:#7a5f1f;
   --text:#1a1a1e;
   --muted:#636366;
-  --accent:#0071e3;
+  
+  /* Timeline Differentiation Colors */
+  --glass-exp: rgba(157, 124, 42, 0.08);
+  --glass-cert: rgba(0, 113, 227, 0.06);
+  --glass-award: rgba(26, 26, 30, 0.05);
+  --ai-neon: #00d28d;
 }
 html{scroll-behavior:smooth}
 body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Outfit',sans-serif;
-  font-weight:300;
-  line-height:1.7;
-  overflow-x:hidden;
+  background:var(--bg); color:var(--text);
+  font-family:'Outfit',sans-serif; font-weight:300;
+  line-height:1.7; overflow-x:hidden;
 }
 
 body::before{
-  content:'';
-  position:fixed;
-  inset:0;
+  content:''; position:fixed; inset:0;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
-  pointer-events:none;
-  z-index:0;
-  opacity:0.3;
+  pointer-events:none; z-index:0; opacity:0.3;
 }
 
-.container{max-width:780px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+.container{max-width:960px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
 
-/* nav */
 nav{
   position:fixed;top:0;left:0;right:0;
-  padding:1.25rem 2rem;
-  display:flex;justify-content:space-between;align-items:center;
+  padding:1.25rem 2rem; display:flex; justify-content:space-between; align-items:center;
   border-bottom:0.5px solid var(--border);
-  background:rgba(252, 252, 252, 0.8);
-  backdrop-filter:blur(12px);
+  background:rgba(252, 252, 252, 0.85); backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px);
   z-index:100;
 }
-.nav-name{
-  font-family:'DM Mono',monospace;
-  font-size:13px;
-  color:var(--gold);
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  text-decoration:none;
-}
-.nav-links{display:flex;gap:1.5rem} /* Slightly tighter gap for more items */
-.nav-links a{
-  font-size:12px;color:var(--muted);
-  text-decoration:none;
-  letter-spacing:0.04em;
-  text-transform:uppercase;
-  transition:color 0.2s;
-}
+.nav-name{ font-family:'DM Mono',monospace; font-size:13px; color:var(--gold); letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; }
+.nav-links{display:flex;gap:1.5rem}
+.nav-links a{ font-size:12px;color:var(--muted); text-decoration:none; text-transform:uppercase; transition:color 0.2s; }
 .nav-links a:hover{color:var(--text)}
 
-/* hero */
-.hero{
-  min-height:100vh;
-  display:flex;align-items:center;
-  padding:6rem 0 4rem;
-}
-.hero-inner{max-width:780px;margin:0 auto;padding:0 2rem}
-.hero-label{
-  font-family:'DM Mono',monospace;
-  font-size:11px;
-  color:var(--gold);
-  letter-spacing:0.15em;
-  text-transform:uppercase;
-  margin-bottom:2rem;
-  opacity:0;
-  animation:fadeUp 0.8s 0.1s forwards;
-}
-.hero h1{
-  font-family:'DM Serif Display',serif;
-  font-size:clamp(2.8rem,6vw,5rem);
-  line-height:1.1;
-  font-weight:400;
-  margin-bottom:1.5rem;
-  opacity:0;
-  animation:fadeUp 0.8s 0.2s forwards;
-}
-.hero h1 em{
-  font-style:italic;
-  color:var(--gold);
-}
-.hero-sub{
-  font-size:1.05rem;
-  color:var(--muted);
-  max-width:520px;
-  margin-bottom:3rem;
-  opacity:0;
-  animation:fadeUp 0.8s 0.35s forwards;
-}
-.hero-links{
-  display:flex;gap:1rem;flex-wrap:wrap;
-  opacity:0;
-  animation:fadeUp 0.8s 0.5s forwards;
-}
-.btn{
-  display:inline-flex;align-items:center;gap:0.5rem;
-  padding:0.6rem 1.25rem;
-  border:0.5px solid var(--border-light);
-  border-radius:4px;
-  font-size:13px;
-  font-family:'DM Mono',monospace;
-  letter-spacing:0.04em;
-  text-decoration:none;
-  color:var(--muted);
-  transition:all 0.2s;
-}
-.btn:hover{color:var(--text);border-color:var(--gold-dim);background:rgba(157, 124, 42, 0.05)}
-.btn-primary{color:var(--gold);border-color:var(--gold)}
-.btn-primary:hover{background:rgba(157, 124, 42, 0.08);color:var(--gold-dim)}
+.hero{ min-height:100vh; display:flex; align-items:center; padding:6rem 0 4rem; }
+.hero-inner{max-width:780px; margin:0 auto; padding:0 2rem}
+.hero-label{ font-family:'DM Mono',monospace; font-size:11px; color:var(--gold); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:2rem; opacity:0; animation:fadeUp 0.8s 0.1s forwards; }
+.hero h1{ font-family:'DM Serif Display',serif; font-size:clamp(2.8rem,6vw,5rem); line-height:1.1; font-weight:400; margin-bottom:1.5rem; opacity:0; animation:fadeUp 0.8s 0.2s forwards; }
+.hero h1 em{ font-style:italic; color:var(--gold); }
+.hero-sub{ font-size:1.05rem; color:var(--muted); max-width:520px; margin-bottom:3rem; opacity:0; animation:fadeUp 0.8s 0.35s forwards; }
+.hero-links{ display:flex; gap:1rem; flex-wrap:wrap; opacity:0; animation:fadeUp 0.8s 0.5s forwards; }
+.btn{ display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.25rem; border:0.5px solid var(--border-light); border-radius:4px; font-size:13px; font-family:'DM Mono',monospace; text-decoration:none; color:var(--muted); transition: all 0.2s; }
+.btn:hover{ border-color: var(--gold); color: var(--gold); background: rgba(157,124,42,0.05); }
 
-.quote-block{
-  margin:5rem 0;
-  padding:2rem 0 2rem 2rem;
-  border-left:1px solid var(--gold-dim);
-  opacity:0;
-  animation:fadeUp 0.8s 0.65s forwards;
-}
-.quote-block blockquote{
-  font-family:'DM Serif Display',serif;
-  font-style:italic;
-  font-size:1.1rem;
-  color:var(--muted);
-  margin-bottom:0.75rem;
-}
-.quote-block cite{
-  font-family:'DM Mono',monospace;
-  font-size:11px;
-  letter-spacing:0.1em;
-  color:var(--gold-dim);
-  text-transform:uppercase;
+.quote-block{ margin:5rem 0 0; padding:2rem 0 2rem 2rem; border-left:1px solid var(--gold-dim); opacity:0; animation:fadeUp 0.8s 0.65s forwards; }
+.quote-block blockquote{ font-family:'DM Serif Display',serif; font-style:italic; font-size:1.1rem; color:var(--muted); margin-bottom:0.75rem; }
+.quote-block cite{ font-family:'DM Mono',monospace; font-size:11px; color:var(--gold-dim); text-transform:uppercase; }
+
+section{padding:6rem 0; border-top:0.5px solid var(--border)}
+.section-label{ font-family:'DM Mono',monospace; font-size:11px; color:var(--gold); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:1rem; text-align:center; }
+
+.legend { display: flex; justify-content: center; gap: 2rem; margin-bottom: 4rem; font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; }
+.legend-item { display: flex; align-items: center; gap: 8px; color: var(--muted); }
+.dot { width: 8px; height: 8px; border-radius: 2px; display: inline-block; }
+.dot.exp { background: var(--gold); opacity: 0.6; }
+.dot.cert { background: #0071e3; opacity: 0.6; }
+.dot.award { background: #1a1a1e; opacity: 0.6; }
+
+.ai-spark {
+  width: 14px; height: 14px; border-radius: 50%; background: var(--ai-neon);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 9px; color: #fff; flex-shrink: 0; box-shadow: 0 0 8px rgba(0, 210, 141, 0.4);
+  font-weight: bold;
 }
 
-section{padding:5rem 0;border-top:0.5px solid var(--border)}
-.section-label{
-  font-family:'DM Mono',monospace;
-  font-size:11px;
-  color:var(--gold);
-  letter-spacing:0.15em;
-  text-transform:uppercase;
-  margin-bottom:2.5rem;
-}
-h2{
-  font-family:'DM Serif Display',serif;
-  font-size:2rem;
-  font-weight:400;
-  margin-bottom:2rem;
-}
+.ai-verify-tag { display: inline-flex; align-items: center; gap: 6px; color: var(--ai-neon); font-size: 10px; font-weight: 500; }
 
-.projects-grid{display:flex;flex-direction:column;gap:1px;background:var(--border);border:0.5px solid var(--border)}
-.project-card{
-  padding:1.75rem 2rem;
-  background:var(--bg);
-  transition:background 0.2s;
-  position:relative;
-}
+.projects-grid{display:flex; flex-direction:column; gap:1px; background:var(--border); border:0.5px solid var(--border)}
+.project-card{ padding:1.75rem 2rem; background:var(--bg); position:relative; }
 .project-card:hover{background:var(--surface)}
-.project-card::before{
-  content:'';
-  position:absolute;left:0;top:0;bottom:0;
-  width:2px;
-  background:var(--gold);
-  opacity:0;
-  transition:opacity 0.2s;
-}
-.project-card:hover::before{opacity:1}
-.project-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.75rem;gap:1rem}
-.project-name{
-  font-family:'DM Mono',monospace;
-  font-size:14px;
-  color:var(--gold);
-  letter-spacing:0.04em;
-}
-.project-tags{display:flex;gap:0.5rem;flex-wrap:wrap}
-.tag{
-  font-family:'DM Mono',monospace;
-  font-size:10px;
-  padding:2px 8px;
-  border:0.5px solid var(--border-light);
-  border-radius:2px;
-  color:var(--muted);
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-}
-.project-title{
-  font-size:1.1rem;
-  font-weight:400;
-  margin-bottom:0.5rem;
-  color:var(--text);
-}
-.project-desc{font-size:0.9rem;color:var(--muted);line-height:1.6}
-.project-meta{
-  margin-top:1rem;
-  display:flex;gap:1.5rem;flex-wrap:wrap;
-}
-.project-stat{
-  font-family:'DM Mono',monospace;
-  font-size:11px;
-  color:var(--gold-dim);
-  letter-spacing:0.04em;
-}
-.project-link{
-  display:inline-flex;align-items:center;gap:4px;
-  font-family:'DM Mono',monospace;
-  font-size:11px;
-  color:var(--muted);
-  text-decoration:none;
-  letter-spacing:0.04em;
-  margin-top:1rem;
-  transition:color 0.2s;
-}
-.project-link:hover{color:var(--gold)}
+.project-name{ font-family:'DM Mono',monospace; font-size:14px; color:var(--gold); }
+.tag{ font-family:'DM Mono',monospace; font-size:10px; padding:2px 8px; border:0.5px solid var(--border-light); color:var(--muted); text-transform:uppercase; }
+.project-title{ font-size:1.1rem; margin-bottom:0.5rem; color:var(--text); font-weight: 400; display:flex; align-items:center; gap:10px;}
+.project-desc{ font-size:0.9rem; color:var(--muted); line-height:1.6; }
+.project-link{ display:inline-flex; align-items:center; gap:4px; font-family:'DM Mono',monospace; font-size:11px; color:var(--gold); text-decoration:none; margin-top:1rem; }
 
-.timeline{display:flex;flex-direction:column;gap:0}
-.timeline-item{
-  display:grid;
-  grid-template-columns:140px 1px 1fr;
-  gap:0 1.5rem;
-  padding-bottom:2.5rem;
-}
-.timeline-item:last-child{padding-bottom:0}
-.timeline-date{
-  font-family:'DM Mono',monospace;
-  font-size:11px;
-  color:var(--muted);
-  letter-spacing:0.06em;
-  padding-top:3px;
-  text-align:right;
-}
-.timeline-line{
-  position:relative;
-  display:flex;flex-direction:column;align-items:center;
-}
-.timeline-dot{
-  width:7px;height:7px;
-  border-radius:50%;
-  background:var(--gold);
-  flex-shrink:0;
-  margin-top:5px;
-}
-.timeline-connector{
-  flex:1;
-  width:0.5px;
-  background:var(--border-light);
-  margin-top:6px;
-}
-.timeline-item:last-child .timeline-connector{display:none}
-.timeline-content{padding-bottom:0}
-.timeline-role{
-  font-size:0.95rem;
-  font-weight:500;
-  color:var(--text);
-  margin-bottom:2px;
-}
-.timeline-org{
-  font-family:'DM Mono',monospace;
-  font-size:12px;
-  color:var(--gold-dim);
-  letter-spacing:0.04em;
-  margin-bottom:0.5rem;
-}
-.timeline-desc{font-size:0.875rem;color:var(--muted);line-height:1.6}
+/* Journey Timeline */
+.timeline-wrap { position: relative; max-width: 1000px; margin: 0 auto; padding: 2rem 0; }
+.timeline-spine { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--border-light); transform: translateX(-50%); z-index: 1; }
 
-.certs-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-  gap:0.75rem;
-}
-.cert-item{
-  padding:0.875rem 1rem;
-  border:0.5px solid var(--border);
-  border-radius:4px;
-  text-decoration:none;
-  transition:all 0.2s;
-  display:block;
-  background:var(--bg);
-}
-.cert-item:hover{border-color:var(--gold-dim);background:var(--surface)}
-.cert-issuer{
-  font-family:'DM Mono',monospace;
-  font-size:10px;
-  color:var(--gold-dim);
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  margin-bottom:4px;
-}
-.cert-name{font-size:0.85rem;color:var(--muted);line-height:1.4}
-.cert-year{
-  font-family:'DM Mono',monospace;
-  font-size:10px;
-  color:var(--border-light);
-  margin-top:4px;
+.t-item { display: grid; grid-template-columns: 1fr 80px 1fr; margin-bottom: 4rem; position: relative; z-index: 2; }
+
+/* Differentiated Glass Boxes */
+.glass-box { 
+    backdrop-filter: blur(25px) saturate(180%); 
+    -webkit-backdrop-filter: blur(25px) saturate(180%); 
+    border: 1px solid rgba(255, 255, 255, 0.6); 
+    border-radius: 16px; padding: 1.75rem; 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+    position: relative; z-index: 5;
 }
 
-.awards-list{display:flex;flex-direction:column;gap:0.75rem}
-.award-item{
-  display:flex;justify-content:space-between;align-items:baseline;
-  padding:0.875rem 1rem;
-  border:0.5px solid var(--border);
-  border-radius:4px;
-  gap:1rem;
-  background:var(--bg);
-}
-.award-name{font-size:0.9rem;color:var(--muted)}
-.award-org{
-  font-family:'DM Mono',monospace;
-  font-size:11px;
-  color:var(--gold-dim);
-  white-space:nowrap;
-  flex-shrink:0;
-}
+.t-exp { background: rgba(255, 255, 255, 0.6); background-blend-mode: overlay; background-color: var(--glass-exp); }
+.t-cert { background: rgba(255, 255, 255, 0.6); background-blend-mode: overlay; background-color: var(--glass-cert); }
+.t-award { background: rgba(255, 255, 255, 0.6); background-blend-mode: overlay; background-color: var(--glass-award); }
 
-#mission {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--surface);
-}
-#mission blockquote {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-size: 1.5rem;
-  color: var(--text);
-  border: none;
-  padding: 0;
-  margin: 0 auto 2rem;
-  max-width: 600px;
-  position: relative;
-}
-#mission blockquote::after {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: var(--gold);
-  margin: 1.5rem auto 0;
-}
+.glass-box-link { text-decoration: none; display: block; color: inherit; cursor: pointer; }
+.glass-box-link:hover { transform: translateY(-6px); border-color: var(--gold); }
 
-footer{
-  padding:4rem 0;
-  border-top:0.5px solid var(--border);
-  text-align:center;
-}
-.footer-name{
-  font-family:'DM Serif Display',serif;
-  font-style:italic;
-  font-size:1.2rem;
-  color:var(--gold);
-  margin-bottom:0.5rem;
-}
-.footer-links{display:flex;justify-content:center;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
-.footer-links a{
-  font-family:'DM Mono',monospace;
-  font-size:11px;
-  color:var(--muted);
-  text-decoration:none;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  transition:color 0.2s;
-}
-.footer-links a:hover{color:var(--gold)}
-.footer-quote{
-  font-family:'DM Serif Display',serif;
-  font-style:italic;
-  font-size:0.85rem;
-  color:var(--border-light);
-  max-width:480px;
-  margin:0 auto;
-}
+.t-content.left { text-align: right; grid-column: 1; }
+.t-content.right { text-align: left; grid-column: 3; }
+.t-content.center { grid-column: 1 / span 3; max-width: 680px; margin: 0 auto; text-align: center; }
 
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
-}
+.t-marker { grid-column: 2; display: flex; justify-content: center; align-items: flex-start; padding-top: 2.5rem; position: relative; z-index: 10; }
+.t-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--border-light); z-index: 2; }
+.t-dot.exp { background: var(--gold); }
+.t-dot.cert { background: #0071e3; }
+.t-dot.award { background: #1a1a1e; }
 
-.fade-in{
-  opacity:0;
-  transform:translateY(16px);
-  transition:opacity 0.6s ease, transform 0.6s ease;
-}
-.fade-in.visible{opacity:1;transform:translateY(0)}
+.t-date { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold-dim); margin-bottom: 8px; }
+.t-tag { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; display: block; }
+.t-title { font-size: 1.05rem; font-weight: 500; color: var(--text); line-height: 1.4; display: flex; align-items: center; gap: 8px; }
+.left .t-title { justify-content: flex-end; }
+.center .t-title { justify-content: center; }
 
-@media(max-width:600px){
-  .timeline-item{grid-template-columns:90px 1px 1fr;gap:0 1rem}
-  .timeline-date{font-size:10px}
-  nav{padding:1rem 1.25rem}
-  .nav-links{gap:1rem}
-  .nav-links a{font-size:10px}
-  .hero h1{font-size:2.4rem}
+.t-sub { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold-dim); margin-bottom: 6px; }
+.t-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; margin-top: 12px; }
+
+.verify-link { 
+    display: inline-block; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold-dim); 
+    text-decoration: none; margin-top: 14px; opacity: 0.7;
+}
+.verify-link:hover { opacity: 1; color: var(--gold); }
+
+#mission { text-align: center; background: var(--surface); padding: 8rem 0; }
+#mission blockquote { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.6rem; color: var(--text); margin-bottom: 2rem; }
+
+footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border); }
+.footer-links{ display:flex; justify-content:center; gap:1.5rem; margin-top:1rem; }
+.footer-links a{ font-family:'DM Mono',monospace; font-size:11px; color:var(--muted); text-decoration:none; }
+
+@keyframes fadeUp{ from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.fade-in{ opacity:0; transform:translateY(16px); transition:all 0.8s ease; }
+.fade-in.visible{ opacity:1; transform:translateY(0); }
+
+@media(max-width:768px){
+    .timeline-spine { left: 20px; }
+    .t-item { grid-template-columns: 40px 1fr; }
+    .t-marker { grid-column: 1; }
+    .t-content.left, .t-content.right, .t-content.center { grid-column: 2; text-align: left; }
+    .left .t-title { justify-content: flex-start; }
 }
 </style>
 </head>
@@ -415,11 +167,9 @@ footer{
 <nav>
   <a href="#" class="nav-name">Rajendra Rawat</a>
   <div class="nav-links">
-    <a href="#">Home</a>
     <a href="#work">Work</a>
-    <a href="#career">Career</a>
-    <a href="#awards">Awards</a>
-    <a href="#credentials">Credentials</a>
+    <a href="#journey">Journey</a>
+    <a href="#mission">Mission</a>
   </div>
 </nav>
 
@@ -429,7 +179,7 @@ footer{
     <h1>Technologist.<br><em>Experimenter.</em><br>Seeker.</h1>
     <p class="hero-sub">Building local AI agents, training language models from scratch, and exploring the frontier of sovereign AI infrastructure.</p>
     <div class="hero-links">
-      <a href="https://github.com/airawatraj" class="btn btn-primary">github.com/airawatraj</a>
+      <a href="https://github.com/airawatraj" class="btn">GitHub</a>
       <a href="https://www.linkedin.com/in/airawatraj" class="btn">LinkedIn</a>
       <a href="https://www.kaggle.com/airawatraj" class="btn">Kaggle</a>
     </div>
@@ -443,187 +193,216 @@ footer{
 <div class="container">
 
   <section id="work">
-    <p class="section-label fade-in">Current work</p>
+    <p class="section-label fade-in">Active Builds</p>
     <div class="projects-grid fade-in">
-
+      
       <div class="project-card">
-        <div class="project-header">
+        <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
           <span class="project-name">COGNI-BRAIN</span>
-          <div class="project-tags">
-            <span class="tag">vLLM</span>
-            <span class="tag">NVFP4</span>
-            <span class="tag">Agentic</span>
-          </div>
+          <div class="project-tags"><span class="tag">vLLM</span><span class="tag">NVFP4</span></div>
         </div>
-        <p class="project-title">Optimised inference & hardened agentic deployment on DGX Spark</p>
-        <p class="project-desc">Nemotron-3-Super-120B running at 23.2 TPS with NemoHermes inside an OpenShell kernel-level sandbox. No cloud, no data leaving the building. Autonomous agent built a complete application in 90 minutes.</p>
-        <div class="project-meta">
-          <span class="project-stat">23.2 TPS · 131K context</span>
-          <span class="project-stat">NVFP4 + Marlin + MTP</span>
-          <span class="project-stat">Landlock · seccomp · K3s</span>
-        </div>
+        <p class="project-title"><span class="ai-spark">✓</span> Hardened agentic deployment on DGX Spark</p>
+        <p class="project-desc">Nemotron-3-Super-120B running at 23.2 TPS with NemoHermes inside an OpenShell sandbox. No cloud, no data leak.</p>
         <a href="https://github.com/airawatraj/dgx-spark-nemotron-super-agent" class="project-link">View repo →</a>
       </div>
 
       <div class="project-card">
-        <div class="project-header">
+        <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
           <span class="project-name">SAGE-GPT</span>
-          <div class="project-tags">
-            <span class="tag">Sanskrit</span>
-            <span class="tag">From Scratch</span>
-            <span class="tag">DGX Spark</span>
-          </div>
+          <div class="project-tags"><span class="tag">Sanskrit</span><span class="tag">From Scratch</span></div>
         </div>
-        <p class="project-title">Sanskrit SLM trained entirely from scratch on DGX Spark</p>
-        <p class="project-desc">7.5M parameter decoder-only Transformer trained on ~140M ultra-pure Sanskrit tokens. Custom SentencePiece tokeniser, SwiGLU activations, RoPE embeddings. Trained with grokking strategy to induce genuine generalisation over memorisation.</p>
-        <div class="project-meta">
-          <span class="project-stat">7.5M params · 140M tokens</span>
-          <span class="project-stat">6 Layer · 8 Head · 1024 ctx</span>
-        </div>
+        <p class="project-title"><span class="ai-spark">✓</span> Sanskrit SLM trained entirely from scratch on DGX Spark</p>
+        <p class="project-desc">7.5M parameter decoder-only Transformer trained on ~140M Sanskrit tokens. Grokking strategy induced for genuine generalisation.</p>
         <a href="https://github.com/airawatraj/sage-gpt" class="project-link">View repo →</a>
       </div>
 
       <div class="project-card">
-        <div class="project-header">
+        <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
           <span class="project-name">COGNI.CHAT</span>
-          <div class="project-tags">
-            <span class="tag">Local-First</span>
-            <span class="tag">Multimodal</span>
-          </div>
+          <div class="project-tags"><span class="tag">Local-First</span><span class="tag">Multimodal</span></div>
         </div>
-        <p class="project-title">Local-first multimodal AI agent platform</p>
-        <p class="project-desc">Orchestrating Cogni Still, Cogni Breath, Cogni Ground, Cogni Weaver, and Cogni Sign into one cohesive intelligence designed to support the human mind, body, and spirit.</p>
+        <p class="project-title"><span class="ai-spark">✓</span> Local-first multimodal AI agent platform</p>
+        <p class="project-desc">Orchestrating Cogni intelligence designed to support the human mind, body, and spirit.</p>
         <a href="https://cogni.chat" class="project-link">cogni.chat →</a>
       </div>
 
       <div class="project-card">
-        <div class="project-header">
+        <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
           <span class="project-name">FIDUCIARY-OPS-AGENT</span>
-          <div class="project-tags">
-            <span class="tag">Gemini</span>
-            <span class="tag">Governance</span>
-          </div>
+          <div class="project-tags"><span class="tag">Gemini</span><span class="tag">Governance</span></div>
         </div>
-        <p class="project-title">Autonomous enterprise governance agent</p>
-        <p class="project-desc">Check-then-Act protocol via Gemini 2.5 Flash Lite. Enforces real-time fiduciary risk-alignment (CLV vs. Refund) using tool-first orchestration.</p>
+        <p class="project-title"><span class="ai-spark">✓</span> Autonomous enterprise governance agent</p>
+        <p class="project-desc">Check-then-Act protocol via Gemini 2.5 Flash Lite. Enforces real-time fiduciary risk-alignment.</p>
         <a href="https://github.com/airawatraj/fiduciary-ops-agent" class="project-link">View repo →</a>
       </div>
 
     </div>
   </section>
 
-  <section id="career">
-    <p class="section-label fade-in">Career</p>
-    <div class="timeline fade-in">
-
-      <div class="timeline-item">
-        <div class="timeline-date">2021 — present</div>
-        <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
-        <div class="timeline-content">
-          <p class="timeline-role">Tribe Lead · Digital Strategy & R&D</p>
-          <p class="timeline-org">Chemist Warehouse (ASX:SIG) · Melbourne</p>
-          <p class="timeline-desc">Led 3-year digital transformation to a MACH architecture, re-platforming legacy on-premise e-commerce to modern cloud. Eliminated manual peak-time maintenance and reduced wait times from 1 hour to near-zero.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">2018 — 2020</div>
-        <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
-        <div class="timeline-content">
-          <p class="timeline-role">Technical Program Lead · Advisor to CIO</p>
-          <p class="timeline-org">Australian Catholic University · via Espire</p>
-          <p class="timeline-desc">Led cloud, data, and AI transformation across 8 global campuses from roadmap to rollout. Resulted in 2 Microsoft Global Case Studies. Outstanding Contribution to Digital Transformation award, 2020.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">2013 — 2021</div>
-        <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
-        <div class="timeline-content">
-          <p class="timeline-role">Director of Technology · Microsoft & Emerging Tech</p>
-          <p class="timeline-org">Espire Infolabs · Gurugram</p>
-          <p class="timeline-desc">Reporting to CEO. Grew the global Microsoft practice to multi-million dollar accounts while incubating Emerging Tech Centres of Excellence and pioneering AI/IoT R&D.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">2006 — 2013</div>
-        <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-connector"></div></div>
-        <div class="timeline-content">
-          <p class="timeline-role">Consultant</p>
-          <p class="timeline-org">Microsoft · Hyderabad</p>
-          <p class="timeline-desc">Engineered mission-critical, high-scale architectures for Fortune Global 500 organisations including Chevron, Merck, Aviva, Monsanto, Emerson, and Franklin Templeton.</p>
-        </div>
-      </div>
-
+  <section id="journey">
+    <p class="section-label fade-in">The Journey</p>
+    
+    <div class="legend fade-in">
+        <div class="legend-item"><span class="dot exp"></span> Experience</div>
+        <div class="legend-item"><span class="dot cert"></span> Credentials</div>
+        <div class="legend-item"><span class="dot award"></span> Awards</div>
+        <div class="legend-item"><span class="ai-verify-tag"><span class="ai-spark">✓</span> AI Verified</span></div>
     </div>
-  </section>
 
-  <section id="awards">
-    <p class="section-label fade-in">Awards</p>
-    <div class="awards-list fade-in">
-      <a href="https://www.linkedin.com/feed/update/urn:li:activity:6680425215421497344/" class="award-item" style="text-decoration:none">
-        <span class="award-name">Outstanding Contribution to Digital Transformation</span>
-        <span class="award-org">ACU · 2020</span>
-      </a>
-      <div class="award-item">
-        <span class="award-name">Gem of the Year</span>
-        <span class="award-org">Espire · 2019</span>
-      </div>
-      <div class="award-item">
-        <span class="award-name">Gem of the Year</span>
-        <span class="award-org">Espire · 2018</span>
-      </div>
-      <div class="award-item">
-        <span class="award-name">Automation Champion</span>
-        <span class="award-org">Espire · 2017</span>
-      </div>
-    </div>
-  </section>
+    <div class="timeline-wrap">
+      <div class="timeline-spine"></div>
 
-  <section id="credentials">
-    <p class="section-label fade-in">Credentials</p>
-    <div class="certs-grid fade-in">
-      <a href="https://www.kaggle.com/certification/badges/airawatraj/105" class="cert-item">
-        <p class="cert-issuer">Google · Kaggle</p>
-        <p class="cert-name">5-Day AI Agents Intensive Course</p>
-        <p class="cert-year">Dec 2025</p>
-      </a>
-      <a href="https://www.credly.com/badges/2610f519-ea4c-47a1-bb5e-f175b07d39f4" class="cert-item">
-        <p class="cert-issuer">Microsoft</p>
-        <p class="cert-name">Azure Data Scientist Associate</p>
-        <p class="cert-year">Oct 2021</p>
-      </a>
-      <a href="https://www.credly.com/badges/76a934e8-729b-4919-8acb-047cccf132d9" class="cert-item">
-        <p class="cert-issuer">Microsoft</p>
-        <p class="cert-name">Azure AI Engineer Associate</p>
-        <p class="cert-year">Sep 2021</p>
-      </a>
-      <a href="https://www.credly.com/badges/62edd8cf-a403-482c-a612-5f8a6907739a" class="cert-item">
-        <p class="cert-issuer">Microsoft</p>
-        <p class="cert-name">Azure Developer Associate</p>
-        <p class="cert-year">Jun 2021</p>
-      </a>
-      <a href="https://www.coursera.org/account/accomplishments/records/7DF255DGGF88" class="cert-item">
-        <p class="cert-issuer">Google Cloud</p>
-        <p class="cert-name">Managing ML Projects with Google Cloud</p>
-        <p class="cert-year">Jun 2020</p>
-      </a>
-      <a href="https://www.coursera.org/account/accomplishments/specialization/H76RGYLFZQ45" class="cert-item">
-        <p class="cert-issuer">DeepLearning.AI</p>
-        <p class="cert-name">Deep Learning Specialisation</p>
-        <p class="cert-year">Dec 2019</p>
-      </a>
-      <a href="https://www.coursera.org/account/accomplishments/verify/WAMDY83EXD9J" class="cert-item">
-        <p class="cert-issuer">Stanford University</p>
-        <p class="cert-name">Machine Learning Certificate</p>
-        <p class="cert-year">May 2019</p>
-      </a>
-      <a href="https://courses.edx.org/certificates/a74a271d1466482c8be05ceb455fc4ba" class="cert-item">
-        <p class="cert-issuer">Microsoft · edX</p>
-        <p class="cert-name">Professional Program Data Science Orientation</p>
-        <p class="cert-year">Oct 2017</p>
-      </a>
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot cert"></div></div>
+        <div class="t-content left">
+            <a href="https://www.kaggle.com/certification/badges/airawatraj/105" target="_blank" class="glass-box glass-box-link t-cert">
+                <p class="t-date">Dec 2025</p>
+                <p class="t-tag">Credential</p>
+                <p class="t-title"><span class="ai-spark">✓</span> AI Agents Intensive Course</p>
+                <p class="t-sub">Google · Kaggle</p>
+                <span class="verify-link">Verify →</span>
+            </a>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot exp"></div></div>
+        <div class="t-content center">
+            <div class="glass-box t-exp" style="border-top: 3px solid var(--gold);">
+                <p class="t-date">2021 — PRESENT</p>
+                <p class="t-title">Tribe Lead · Digital Strategy & R&D</p>
+                <p class="t-sub">Chemist Warehouse (ASX:SIG) · Melbourne</p>
+                <p class="t-desc">Directing MACH transformation and sovereign AI strategy on DGX Spark infrastructure.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot cert"></div></div>
+        <div class="t-content left">
+            <div class="glass-box t-cert">
+                <p class="t-date">2021</p>
+                <p class="t-tag">Credentials</p>
+                <p class="t-title">Azure Professional</p>
+                <a href="https://www.credly.com/badges/2610f519-ea4c-47a1-bb5e-f175b07d39f4" target="_blank" class="verify-link" style="display:block"><span class="ai-spark">✓</span> Azure Data Scientist Associate →</a>
+                <a href="https://www.credly.com/badges/76a934e8-729b-4919-8acb-047cccf132d9" target="_blank" class="verify-link" style="display:block"><span class="ai-spark">✓</span> Azure AI Engineer Associate →</a>
+                <a href="https://www.credly.com/badges/62edd8cf-a403-482c-a612-5f8a6907739a" target="_blank" class="verify-link" style="display:block">Azure Developer Associate →</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot award"></div></div>
+        <div class="t-content right">
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:6680425215421497344/" target="_blank" class="glass-box glass-box-link t-award">
+                <p class="t-date">2020</p>
+                <p class="t-tag">Award</p>
+                <p class="t-title"><span class="ai-spark">✓</span> Contribution to Transformation</p>
+                <p class="t-sub">Australian Catholic University</p>
+                <span class="verify-link">View Award →</span>
+            </a>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot cert"></div></div>
+        <div class="t-content left">
+            <a href="https://www.coursera.org/account/accomplishments/records/7DF255DGGF88" target="_blank" class="glass-box glass-box-link t-cert">
+                <p class="t-date">Jun 2020</p>
+                <p class="t-tag">Credential</p>
+                <p class="t-title"><span class="ai-spark">✓</span> Managing ML Projects</p>
+                <p class="t-sub">Google Cloud</p>
+                <span class="verify-link">Verify →</span>
+            </a>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot exp"></div></div>
+        <div class="t-content center">
+            <div class="glass-box t-exp">
+                <p class="t-date">2018 — 2020</p>
+                <p class="t-title">Technical Program Lead</p>
+                <p class="t-sub">ACU (via Espire)</p>
+                <p class="t-desc">Cloud transformation resulting in Microsoft Global Case Studies.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot cert"></div></div>
+        <div class="t-content left">
+            <div class="glass-box t-cert">
+                <p class="t-date">2019</p>
+                <p class="t-tag">Credentials</p>
+                <p class="t-title">Advanced Machine Learning</p>
+                <a href="https://www.coursera.org/account/accomplishments/specialization/H76RGYLFZQ45" target="_blank" class="verify-link" style="display:block"><span class="ai-spark">✓</span> Deep Learning Specialisation →</a>
+                <a href="https://www.coursera.org/account/accomplishments/verify/WAMDY83EXD9J" target="_blank" class="verify-link" style="display:block"><span class="ai-spark">✓</span> Machine Learning · Stanford →</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot award"></div></div>
+        <div class="t-content right">
+            <div class="glass-box t-award">
+                <p class="t-date">2019 · 2018</p>
+                <p class="t-tag">Awards</p>
+                <p class="t-title">Gem of the Year</p>
+                <p class="t-sub">Espire Infolabs</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot exp"></div></div>
+        <div class="t-content center">
+            <div class="glass-box t-exp">
+                <p class="t-date">2013 — 2021</p>
+                <p class="t-title">Director of Technology · Emerging Tech</p>
+                <p class="t-sub">Espire Infolabs · Gurugram</p>
+                <p class="t-desc">Incubated multi-million dollar AI/IoT Centres of Excellence.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot award"></div></div>
+        <div class="t-content right">
+            <div class="glass-box t-award">
+                <p class="t-date">2017</p>
+                <p class="t-tag">Award</p>
+                <p class="t-title"><span class="ai-spark">✓</span> Automation Champion</p>
+                <p class="t-sub">Espire Infolabs</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot cert"></div></div>
+        <div class="t-content left">
+            <a href="https://courses.edx.org/certificates/a74a271d1466482c8be05ceb455fc4ba" target="_blank" class="glass-box glass-box-link t-cert">
+                <p class="t-date">Oct 2017</p>
+                <p class="t-tag">Credential</p>
+                <p class="t-title"><span class="ai-spark">✓</span> Data Science Orientation</p>
+                <p class="t-sub">Microsoft · edX</p>
+                <span class="verify-link">Verify →</span>
+            </a>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot exp"></div></div>
+        <div class="t-content center">
+            <div class="glass-box t-exp">
+                <p class="t-date">2006 — 2013</p>
+                <p class="t-title">Consultant</p>
+                <p class="t-sub">Microsoft · Hyderabad</p>
+                <p class="t-desc">Architected mission-critical systems for Fortune Global 500: Chevron, Merck.</p>
+            </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -632,37 +411,26 @@ footer{
 <section id="mission">
   <div class="container">
     <p class="section-label">Mission</p>
-    <blockquote class="fade-in">
-      "To free humans from becoming machines, and be more Humane."
-    </blockquote>
-    <p class="fade-in" style="color:var(--muted); max-width:560px; margin: 0 auto;">
-      My mission is to free humans from repetitive tasks via automation and AI, 
-      and to raise human intelligence and consciousness to its full potential.
-    </p>
+    <blockquote class="fade-in">"To free humans from becoming machines, and be more Humane."</blockquote>
+    <p class="fade-in" style="color:var(--muted); max-width:560px; margin: 0 auto;">Raise human intelligence and consciousness to its full potential via automation and sovereign AI.</p>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    <p class="footer-name">Rajendra Rawat</p>
+    <p class="footer-name" style="font-family:'DM Serif Display',serif; font-style:italic; font-size:1.2rem; color:var(--gold);">Rajendra Rawat</p>
     <div class="footer-links">
       <a href="https://github.com/airawatraj">GitHub</a>
       <a href="https://www.linkedin.com/in/airawatraj">LinkedIn</a>
       <a href="https://www.kaggle.com/airawatraj">Kaggle</a>
     </div>
-    <p class="footer-quote">"I have no special talent. I am only passionately curious." — Albert Einstein</p>
   </div>
 </footer>
 
 <script>
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting){
-      e.target.classList.add('visible');
-    }
-  });
-}, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
-
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } });
+}, {threshold: 0.1});
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
