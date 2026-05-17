@@ -1,8 +1,9 @@
 
 
 # Rajendra Rawat
-**Agentic AI · Digital Transformation · Strategic Engineering Leader @ Chemist Warehouse**
-Melbourne, Australia | [GitHub](https://github.com/airawatraj) | [LinkedIn](https://www.linkedin.com/in/airawatraj) | [Kaggle](https://www.kaggle.com/airawatraj) | [Website](https://airawatraj.github.io/)
+**Agentic AI · Digital Transformation · Strategic Engineering Leader · Australia** 
+
+[GitHub](https://github.com/airawatraj) | [LinkedIn](https://www.linkedin.com/in/airawatraj) | [Kaggle](https://www.kaggle.com/airawatraj) | [Website](https://airawatraj.github.io/)
 
 ---
 
@@ -44,12 +45,12 @@ Check-then-Act protocol via Gemini 2.5 Flash Lite. Enforces real-time fiduciary 
 
 ### 2021 — PRESENT
 **✅ Tribe Lead · Digital Strategy & R&D**
-*Chemist Warehouse · Melbourne*
+*ASX-listed retail group · Australia*
 Led 3-year re-platform of legacy e-commerce to modern cloud MACH architecture. Contributing to AI readiness and agentic AI research within the R&D function.
 
 ### 2018 — 2020
 **✅ Technical Program Lead · Advisor to CIO**
-*Australian Catholic University (via Espire) · Melbourne*
+*Australian Catholic University (via Espire) · Australia*
 Advisor to CIO across 8 global campuses. Deployed AVA conversational AI agent serving students university-wide. Delivered AI-driven campus transformation featured in 2 Microsoft Global Case Studies. Recipient of the Outstanding Contribution to Digital Transformation award.
 
 ### 2013 — 2021
