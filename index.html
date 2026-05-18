@@ -17,8 +17,6 @@
   --gold-dim:#7a5f1f;
   --text:#1a1a1e;
   --muted:#636366;
-  
-  /* Color Coding */
   --glass-exp: rgba(157, 124, 42, 0.08);
   --glass-cert: rgba(0, 113, 227, 0.06);
   --glass-award: rgba(26, 26, 30, 0.05);
@@ -30,15 +28,12 @@ body{
   font-family:'Outfit',sans-serif; font-weight:300;
   line-height:1.7; overflow-x:hidden;
 }
-
 body::before{
   content:''; position:fixed; inset:0;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
   pointer-events:none; z-index:0; opacity:0.3;
 }
-
 .container{max-width:960px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
-
 nav{
   position:fixed;top:0;left:0;right:0;
   padding:1.25rem 2rem; display:flex; justify-content:space-between; align-items:center;
@@ -50,7 +45,6 @@ nav{
 .nav-links{display:flex;gap:1.5rem}
 .nav-links a{ font-size:12px;color:var(--muted); text-decoration:none; text-transform:uppercase; transition:color 0.2s; }
 .nav-links a:hover{color:var(--text)}
-
 .hero{ min-height:100vh; display:flex; align-items:center; padding:6rem 0 4rem; }
 .hero-inner{max-width:780px; margin:0 auto; padding:0 2rem}
 .hero-label{ font-family:'DM Mono',monospace; font-size:11px; color:var(--gold); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:2rem; opacity:0; animation:fadeUp 0.8s 0.1s forwards; }
@@ -58,33 +52,26 @@ nav{
 .hero h1 em{ font-style:italic; color:var(--gold); }
 .hero-sub{ font-size:1.05rem; color:var(--muted); max-width:520px; margin-bottom:3rem; opacity:0; animation:fadeUp 0.8s 0.35s forwards; }
 .hero-links{ display:flex; gap:1rem; flex-wrap:wrap; opacity:0; animation:fadeUp 0.8s 0.5s forwards; }
-
 .btn{ display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.25rem; border:0.5px solid var(--border-light); border-radius:4px; font-size:13px; font-family:'DM Mono',monospace; text-decoration:none; color:var(--muted); transition: all 0.2s; }
 .btn:hover{ border-color: var(--gold); color: var(--gold); background: rgba(157,124,42,0.05); }
-
 .quote-block{ margin:5rem 0 0; padding:2rem 0 2rem 2rem; border-left:1px solid var(--gold-dim); opacity:0; animation:fadeUp 0.8s 0.65s forwards; }
 .quote-block blockquote{ font-family:'DM Serif Display',serif; font-style:italic; font-size:1.1rem; color:var(--muted); margin-bottom:0.75rem; }
 .quote-block cite{ font-family:'DM Mono',monospace; font-size:11px; color:var(--gold-dim); text-transform:uppercase; }
-
 section{padding:6rem 0; border-top:0.5px solid var(--border)}
 .section-label{ font-family:'DM Mono',monospace; font-size:11px; color:var(--gold); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:1rem; text-align:center; }
-
 .legend { display: flex; justify-content: center; gap: 2rem; margin-bottom: 4rem; font-family: 'DM Mono', monospace; font-size: 10px; text-transform: uppercase; }
 .legend-item { display: flex; align-items: center; gap: 8px; color: var(--muted); }
 .dot { width: 8px; height: 8px; border-radius: 2px; display: inline-block; }
 .dot.exp { background: var(--gold); opacity: 0.6; }
 .dot.cert { background: #0071e3; opacity: 0.6; }
 .dot.award { background: #1a1a1e; opacity: 0.6; }
-
 .ai-spark {
   width: 14px; height: 14px; border-radius: 50%; background: var(--ai-neon);
   display: inline-flex; align-items: center; justify-content: center;
   font-size: 9px; color: #fff; flex-shrink: 0; box-shadow: 0 0 8px rgba(0, 210, 141, 0.4);
   font-weight: bold;
 }
-
 .ai-verify-tag { display: inline-flex; align-items: center; gap: 6px; color: var(--ai-neon); font-size: 10px; font-weight: 500; }
-
 .projects-grid{display:flex; flex-direction:column; gap:1px; background:var(--border); border:0.5px solid var(--border)}
 .project-card{ padding:1.75rem 2rem; background:var(--bg); position:relative; }
 .project-card:hover{background:var(--surface)}
@@ -94,12 +81,9 @@ section{padding:6rem 0; border-top:0.5px solid var(--border)}
 .project-desc{ font-size:0.9rem; color:var(--muted); line-height:1.6; }
 .project-link{ display:inline-flex; align-items:center; gap:4px; font-family:'DM Mono',monospace; font-size:11px; color:var(--gold); text-decoration:none; margin-top:1rem; border-bottom: 1px solid transparent; transition: border 0.2s; }
 .project-link:hover { border-color: var(--gold); }
-
 .timeline-wrap { position: relative; max-width: 1000px; margin: 0 auto; padding: 2rem 0; }
 .timeline-spine { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--border-light); transform: translateX(-50%); z-index: 1; }
-
 .t-item { display: grid; grid-template-columns: 1fr 80px 1fr; margin-bottom: 4rem; position: relative; z-index: 2; }
-
 .glass-box { 
     backdrop-filter: blur(25px) saturate(180%); 
     -webkit-backdrop-filter: blur(25px) saturate(180%); 
@@ -109,51 +93,40 @@ section{padding:6rem 0; border-top:0.5px solid var(--border)}
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
     position: relative; z-index: 5;
 }
-
 .t-exp { background: rgba(255, 255, 255, 0.85); background-blend-mode: overlay; background-color: var(--glass-exp); }
 .t-cert { background: rgba(255, 255, 255, 0.85); background-blend-mode: overlay; background-color: var(--glass-cert); }
 .t-award { background: rgba(255, 255, 255, 0.85); background-blend-mode: overlay; background-color: var(--glass-award); }
-
 .glass-box-link { text-decoration: none; display: block; color: inherit; cursor: pointer; }
 .glass-box-link:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 15px 45px rgba(157, 124, 42, 0.15); }
-
 .t-content.left { text-align: right; grid-column: 1; }
 .t-content.right { text-align: left; grid-column: 3; }
 .t-content.center { grid-column: 1 / span 3; max-width: 680px; margin: 0 auto; text-align: center; }
-
 .t-marker { grid-column: 2; display: flex; justify-content: center; align-items: flex-start; padding-top: 2.5rem; position: relative; z-index: 10; }
 .t-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 2px solid var(--border-light); z-index: 2; }
 .t-dot.exp { background: var(--gold); border-color: var(--gold); }
 .t-dot.award { background: #1a1a1e; border-color: #1a1a1e; }
 .t-dot.cert { border: 2.5px solid var(--cert-color); }
-
 .t-date { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gold-dim); margin-bottom: 8px; }
 .t-tag { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; display: block; }
 .t-title { font-size: 1.05rem; font-weight: 500; color: var(--text); line-height: 1.4; display: flex; align-items: center; gap: 8px; }
 .left .t-title { justify-content: flex-end; }
 .center .t-title { justify-content: center; }
-
 .t-sub { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold-dim); margin-bottom: 6px; }
 .t-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; margin-top: 12px; }
-
 .verify-link { 
     display: inline-block; font-family: 'DM Mono', monospace; font-size: 11px; color: #0071e3; 
     text-decoration: none; margin-top: 14px; border-bottom: 1px solid transparent; transition: 0.2s;
 }
 .verify-link:hover { border-bottom-color: #0071e3; color: var(--gold); }
-
 #mission { text-align: center; background: var(--surface); padding: 8rem 0; }
 #mission blockquote { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.6rem; color: var(--text); margin-bottom: 2rem; }
-
 footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border); }
 .footer-links{ display:flex; justify-content:center; gap:1.5rem; margin-top:1rem; flex-wrap: wrap; }
 .footer-links a{ font-family:'DM Mono',monospace; font-size:11px; color:var(--muted); text-decoration:none; }
 .footer-links a:hover{ color: var(--gold); }
-
 @keyframes fadeUp{ from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 .fade-in{ opacity:0; transform:translateY(16px); transition:all 0.8s ease; }
 .fade-in.visible{ opacity:1; transform:translateY(0); }
-
 @media(max-width:768px){
     .timeline-spine { left: 20px; }
     .t-item { grid-template-columns: 40px 1fr; }
@@ -203,8 +176,18 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
           <div class="project-tags"><span class="tag">vLLM</span><span class="tag">NVFP4</span></div>
         </div>
         <p class="project-title"><span class="ai-spark">✓</span> Hardened agentic deployment on DGX Spark</p>
-        <p class="project-desc">Nemotron-3-Super-120B running at 23.2 TPS with NemoHermes inside an OpenShell sandbox. No cloud, no data leaving the building.</p>
+        <p class="project-desc">Nemotron-3-Super-120B running at 23.45 tok/s, top of the spark-arena leaderboard for single-node NVFP4. NemoHermes inside an OpenShell kernel-level sandbox. No cloud, no data leaving the building.</p>
         <a href="https://github.com/airawatraj/dgx-spark-nemotron-super-agent" class="project-link">View repo →</a>
+      </div>
+
+      <div class="project-card">
+        <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+          <span class="project-name">COGNI.CHAT</span>
+          <div class="project-tags"><span class="tag">Local-First</span><span class="tag">Multimodal</span></div>
+        </div>
+        <p class="project-title"><span class="ai-spark">✓</span> Local-first multimodal AI agent platform</p>
+        <p class="project-desc">Full multi-agent system: Planner, Actor, Vision, and RAG Memory orchestrated locally. Hybrid cloud/local routing, Obsidian vault integration, computer vision, voice output, autonomous code generation. Daily-driven on DGX Spark with Nemotron-3-Super-120B.</p>
+        <a href="https://cogni.chat" class="project-link">cogni.chat →</a>
       </div>
 
       <div class="project-card">
@@ -219,22 +202,21 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
 
       <div class="project-card">
         <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
-          <span class="project-name">COGNI.CHAT</span>
-          <div class="project-tags"><span class="tag">Local-First</span><span class="tag">Multimodal</span></div>
-        </div>
-        <p class="project-title"><span class="ai-spark">✓</span> Local-first multimodal AI agent platform</p>
-        <p class="project-desc">Orchestrating Cogni intelligence designed to support the human mind, body, and spirit.</p>
-        <a href="https://cogni.chat" class="project-link">cogni.chat →</a>
-      </div>
-
-      <div class="project-card">
-        <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
           <span class="project-name">FIDUCIARY-OPS-AGENT</span>
           <div class="project-tags"><span class="tag">Gemini</span><span class="tag">Governance</span></div>
         </div>
         <p class="project-title"><span class="ai-spark">✓</span> Autonomous enterprise governance agent</p>
-        <p class="project-desc">Check-then-Act protocol via Gemini 2.5 Flash Lite. Enforces real-time fiduciary risk-alignment.</p>
+        <p class="project-desc">Check-then-Act protocol via Gemini 2.5 Flash Lite. Enforces real-time fiduciary risk-alignment. Capstone project for Google/Kaggle AI Agents Intensive 2025.</p>
         <a href="https://github.com/airawatraj/fiduciary-ops-agent" class="project-link">View repo →</a>
+      </div>
+
+      <div class="project-card">
+        <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+          <span class="project-name">COGNI SIGN</span>
+          <div class="project-tags"><span class="tag">Computer Vision</span><span class="tag">2018</span></div>
+        </div>
+        <p class="project-title"><span class="ai-spark">✓</span> Indian Sign Language recognition</p>
+        <p class="project-desc">Computer vision model achieving 99% precision/recall on Indian Sign Language. Built to bridge communication for the deaf and mute community. Training data collected personally in 2018. An independent initiative predating mainstream vision AI tooling by years.</p>
       </div>
 
     </div>
@@ -253,6 +235,22 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
     <div class="timeline-wrap">
       <div class="timeline-spine"></div>
 
+      <!-- Cogni-Brain leaderboard -->
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot exp"></div></div>
+        <div class="t-content right">
+            <a href="https://spark-arena.com/benchmark/sub1778644062716" target="_blank" class="glass-box glass-box-link t-exp" style="border-top: 3px solid var(--gold);">
+                <p class="t-date">2025 — 2026</p>
+                <p class="t-tag">Independent Research</p>
+                <p class="t-title"><span class="ai-spark">✓</span> Cogni-Brain · Spark Arena #1</p>
+                <p class="t-sub">DGX Spark · Nemotron-3-Super-120B · NVFP4</p>
+                <p class="t-desc">23.45 tok/s, top of the leaderboard for single-node NVFP4. 104 benchmark tests, 5h 49m, zero crashes or OOM. Open sourced as community reference implementation.</p>
+                <span class="verify-link">View benchmark →</span>
+            </a>
+        </div>
+      </div>
+
+      <!-- AI Agents Intensive -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot cert"></div></div>
         <div class="t-content left">
@@ -266,6 +264,7 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
+      <!-- Current role -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot exp"></div></div>
         <div class="t-content center">
@@ -273,11 +272,12 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
                 <p class="t-date">2021 — PRESENT</p>
                 <p class="t-title">Tribe Lead · Digital Strategy & R&D</p>
                 <p class="t-sub">ASX-listed retail group · Australia</p>
-                <p class="t-desc">Led 8 microservices teams (~25 engineers) across a broader program of 40+ to deliver cloud-native MACH architecture - transforming legacy e-commerce into the foundational layer for enterprise AI readiness.</p>
+                <p class="t-desc">Led 8 microservices teams (~25 engineers) across a broader program of 40+ to deliver cloud-native MACH architecture, transforming legacy e-commerce into the foundational layer for enterprise AI readiness.</p>
             </div>
         </div>
       </div>
 
+      <!-- Azure certs -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot cert"></div></div>
         <div class="t-content left">
@@ -292,6 +292,7 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
+      <!-- ACU award -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot award"></div></div>
         <div class="t-content right">
@@ -305,9 +306,24 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
+      <!-- Cogni Sign -->
+      <div class="t-item fade-in">
+        <div class="t-marker"><div class="t-dot exp"></div></div>
+        <div class="t-content left">
+            <div class="glass-box t-exp">
+                <p class="t-date">2018 — PRESENT</p>
+                <p class="t-tag">Independent Research</p>
+                <p class="t-title"><span class="ai-spark">✓</span> Cogni Sign · Sign Language AI</p>
+                <p class="t-sub">Indian Sign Language · 99% Precision/Recall</p>
+                <p class="t-desc">Computer vision model to bridge communication for the deaf and mute community. Training data collected personally. Predated mainstream vision AI tooling by years.</p>
+            </div>
+        </div>
+      </div>
+
+      <!-- Google ML cert -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot cert"></div></div>
-        <div class="t-content left">
+        <div class="t-content right">
             <a href="https://www.coursera.org/account/accomplishments/records/7DF255DGGF88" target="_blank" class="glass-box glass-box-link t-cert">
                 <p class="t-date">Jun 2020</p>
                 <p class="t-tag">Credential</p>
@@ -318,6 +334,7 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
+      <!-- ACU role -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot exp"></div></div>
         <div class="t-content center">
@@ -330,6 +347,7 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
+      <!-- ML certs -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot cert"></div></div>
         <div class="t-content left">
@@ -343,6 +361,7 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
+      <!-- Gem of the Year -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot award"></div></div>
         <div class="t-content right">
@@ -355,6 +374,7 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
+      <!-- Espire -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot exp"></div></div>
         <div class="t-content center">
@@ -362,11 +382,12 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
                 <p class="t-date">2013 — 2021</p>
                 <p class="t-title"><span class="ai-spark">✓</span> Director of Technology · Emerging Tech</p>
                 <p class="t-sub">Espire Infolabs · Gurugram</p>
-                <p class="t-desc">Incubated multi-million dollar AI/IoT Centres of Excellence.</p>
+                <p class="t-desc">Incubated multi-million dollar AI/IoT Centres of Excellence. Architected the company's first enterprise AI chatbot in 2015, seven years before the ChatGPT wave.</p>
             </div>
         </div>
       </div>
 
+      <!-- Automation Champion -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot award"></div></div>
         <div class="t-content right">
@@ -379,6 +400,7 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
+      <!-- Data Science cert -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot cert"></div></div>
         <div class="t-content left">
@@ -392,6 +414,7 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
+      <!-- Microsoft -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot exp"></div></div>
         <div class="t-content center">
@@ -399,7 +422,7 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
                 <p class="t-date">2006 — 2013</p>
                 <p class="t-title">Consultant</p>
                 <p class="t-sub">Microsoft · Hyderabad</p>
-                <p class="t-desc">Architected mission-critical systems for Fortune Global 500: Chevron, Merck.</p>
+                <p class="t-desc">Architected mission-critical systems for Fortune Global 500: Chevron, Merck, Franklin Templeton, Aviva.</p>
             </div>
         </div>
       </div>
@@ -421,7 +444,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
   <div class="container">
     <p class="footer-name" style="font-family:'DM Serif Display',serif; font-style:italic; font-size:1.2rem; color:var(--gold);">Rajendra Rawat</p>
     <div class="footer-links">
-      <a href="Rajendra_Rawat_CV.pdf" download>Download CV</a>
       <a href="https://rawatlabz.wordpress.com/">Physical AI</a>
       <a href="https://github.com/airawatraj">GitHub</a>
       <a href="https://www.linkedin.com/in/airawatraj">LinkedIn</a>
