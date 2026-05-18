@@ -46,7 +46,8 @@ Check-then-Act protocol via Gemini 2.5 Flash Lite. Enforces real-time fiduciary 
 ### 2021 — PRESENT
 **✅ Tribe Lead · Digital Strategy & R&D**
 *ASX-listed retail group · Australia*
-Led 3-year re-platform of legacy e-commerce to modern cloud MACH architecture. Contributing to AI readiness and agentic AI research within the R&D function.
+Led end-to-end re-platform of legacy on-prem e-commerce to cloud-native MACH architecture across 8 microservices teams (~25 engineers) in a broader program of 40+ including QA, support, and external partners. Delivered the foundational infrastructure layer required for AI readiness at scale.
+Driving SaaS rationalisation and open-source migration strategy to reduce platform costs. Evaluating and proposing AI-assisted SDLC tooling (GitHub Copilot, Codex) to automate engineering workflows across the organisation.
 
 ### 2018 — 2020
 **✅ Technical Program Lead · Advisor to CIO**
