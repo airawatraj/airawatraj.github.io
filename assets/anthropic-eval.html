@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajendra Rawat — CV</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --color-text-primary: #1a1a18;
+  --color-text-secondary: #5a5a56;
+  --color-text-tertiary: #8a8a84;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f5f4f0;
+  --color-border-tertiary: rgba(0,0,0,0.12);
+  --color-border-secondary: rgba(0,0,0,0.22);
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-primary: #f0efe8;
+    --color-text-secondary: #b0afa8;
+    --color-text-tertiary: #808078;
+    --color-background-primary: #1c1c1a;
+    --color-background-secondary: #262622;
+    --color-border-tertiary: rgba(255,255,255,0.1);
+    --color-border-secondary: rgba(255,255,255,0.2);
+  }
+}
+body { font-family: var(--font-sans); background: var(--color-background-secondary); color: var(--color-text-primary); min-height: 100vh; }
+.app-header { background: var(--color-background-primary); border-bottom: 0.5px solid var(--color-border-tertiary); padding: 0.6rem 1.25rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.app-title { font-size: 14px; font-weight: 500; }
+.app-sub { font-size: 11px; color: var(--color-text-tertiary); }
+.header-btns { display: flex; gap: 6px; }
+.btn { font-size: 11px; color: var(--color-text-tertiary); cursor: pointer; padding: 5px 10px; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); background: none; transition: all 0.15s; display: flex; align-items: center; gap: 4px; font-family: var(--font-sans); }
+.btn:hover { background: var(--color-background-secondary); color: var(--color-text-secondary); }
+.btn-print { color: #0F6E56; border-color: rgba(15,110,86,0.3); }
+.btn-print:hover { background: rgba(29,158,117,0.08); }
+.container { display: grid; grid-template-columns: 316px 1fr; gap: 0; height: calc(100vh - 45px); }
+.left-panel { border-right: 0.5px solid var(--color-border-tertiary); padding: 1rem; overflow-y: auto; background: var(--color-background-primary); }
+.right-panel { padding: 1.25rem 1.75rem; overflow-y: auto; }
+.panel-title { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 0.5rem; }
+.section-divider { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-tertiary); margin: 0.85rem 0 0.4rem; padding-top: 0.7rem; border-top: 0.5px solid var(--color-border-tertiary); }
+.legend { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 0.85rem; padding-bottom: 0.85rem; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--color-text-secondary); }
+.legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.req-card { border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-tertiary); padding: 0.55rem 0.7rem; margin-bottom: 5px; cursor: pointer; transition: all 0.15s; background: var(--color-background-primary); }
+.req-card:hover { border-color: var(--color-border-secondary); background: var(--color-background-secondary); }
+.req-card.active { border-width: 1.5px; }
+.req-card.logistics { cursor: default; }
+.req-card.logistics:hover { border-color: var(--color-border-tertiary); background: var(--color-background-primary); }
+.req-label { font-size: 12px; font-weight: 500; margin-bottom: 2px; color: var(--color-text-primary); }
+.req-note { font-size: 11px; color: var(--color-text-tertiary); line-height: 1.4; }
+.strength-bar { height: 3px; border-radius: 2px; margin-top: 6px; background: var(--color-border-tertiary); }
+.strength-fill { height: 100%; border-radius: 2px; }
+.info-bar { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.6rem 0.85rem; margin-bottom: 1rem; font-size: 12px; color: var(--color-text-secondary); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+.info-bar i { flex-shrink: 0; font-size: 15px; margin-top: 1px; }
+
+/* CV typography */
+.cv-name { font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 3px; }
+.cv-meta { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 1.25rem; line-height: 1.5; }
+.cv-meta a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border 0.2s; }
+.cv-meta a:hover { border-bottom-color: var(--color-text-secondary); }
+.cv-h1 { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--color-text-tertiary); border-bottom: 0.5px solid var(--color-border-tertiary); padding-bottom: 4px; margin-bottom: 0.65rem; margin-top: 1.25rem; }
+.cv-job-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-top: 0.85rem; }
+.cv-job-meta { font-size: 12px; color: var(--color-text-tertiary); margin-bottom: 0.4rem; margin-top: 1px; }
+.cv-p { font-size: 13px; line-height: 1.7; color: var(--color-text-secondary); margin-bottom: 0.4rem; }
+.cv-bullet { font-size: 13px; line-height: 1.7; color: var(--color-text-secondary); padding-left: 1rem; position: relative; margin-bottom: 0.25rem; }
+.cv-bullet::before { content: '·'; position: absolute; left: 0.3rem; color: var(--color-text-tertiary); }
+.cv-bullet-label { font-weight: 500; color: var(--color-text-primary); }
+
+/* Highlight system */
+.highlight { border-radius: 3px; transition: all 0.2s; cursor: default; }
+#cv-render:not(.all-dim) .highlight { background: transparent !important; color: inherit !important; padding: 0; }
+.all-dim .highlight:not(.active-hl) { opacity: 0.3; background: transparent !important; color: inherit !important; padding: 0; }
+.active-hl { padding: 1px 4px; outline: 2px solid; border-radius: 3px; }
+
+/* Print */
+@media print {
+  @page { margin: 1.8cm 2cm; size: A4; }
+  .app-header, .left-panel, .info-bar { display: none !important; }
+  body { background: white; }
+  .container { display: block; height: auto; }
+  .right-panel { padding: 0; overflow: visible; }
+  .all-dim .highlight:not(.active-hl) { opacity: 1 !important; }
+  .highlight { background: none !important; color: inherit !important; padding: 0; }
+  .active-hl { outline: none !important; }
+  .cv-name { font-size: 20px; }
+  .cv-p, .cv-bullet { font-size: 12px; color: #333; }
+  .cv-job-title { font-size: 13px; }
+  .cv-meta, .cv-job-meta { color: #666; }
+  .cv-h1 { color: #555; border-bottom-color: #ccc; }
+  .cv-bullet-label { color: #111; }
+}
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+@media (max-width: 720px) {
+  .container { grid-template-columns: 1fr; height: auto; }
+  .left-panel { border-right: none; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .right-panel { padding: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<h1 class="sr-only">JD fit mapper — Rajendra Rawat vs Anthropic Head of ANZ Applied AI</h1>
+
+<header class="app-header">
+  <div>
+    <div class="app-title">JD Fit Mapper</div>
+    <div class="app-sub">Rajendra Rawat · Anthropic Head of ANZ, Applied AI</div>
+  </div>
+  <div class="header-btns">
+    <button class="btn" onclick="resetActive()"><i class="ti ti-eye" aria-hidden="true"></i>Clear highlights</button>
+    <button class="btn btn-print" onclick="window.print()"><i class="ti ti-printer" aria-hidden="true"></i>Print CV</button>
+  </div>
+</header>
+
+<div class="container">
+  <div class="left-panel">
+    <div class="panel-title">JD requirements</div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#1D9E75"></div>Strong</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#BA7517"></div>Partial</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#E24B4A"></div>Gap</div>
+    </div>
+    <div id="req-list"></div>
+    <div class="section-divider">Logistics &amp; eligibility</div>
+    <div id="logistics-list"></div>
+  </div>
+
+  <div class="right-panel">
+    <div class="info-bar" id="info-bar">
+      <i class="ti ti-mouse" aria-hidden="true"></i>
+      Click any requirement to highlight matching evidence in your CV. Use "Clear highlights" or click again to reset.
+    </div>
+    <div id="cv-render"></div>
+  </div>
+</div>
+
+<script>
+const REQ = [
+  {
+    id:'sa', label:'15+ yrs Solutions Architect / pre-sales', strength:95, color:'teal',
+    note:'Explicitly calls out matrixed pre-sales, POCs, architecture across GCP, and driving 50+ member ODCs.',
+    highlights:['espire-presales','espire-poc','espire-trust','espire-logos','ms-consulting','cw-gcp']
+  },
+  {
+    id:'mgmt', label:'5+ yrs managing pre-sales teams', strength:94, color:'teal',
+    note:'Now exceptionally strong: Line management of 25+ global engineers AND cross-functional matrix leadership for pre-sales.',
+    highlights:['espire-presales','cw-team','espire-coe']
+  },
+  {
+    id:'anz', label:'ANZ enterprise customer experience', strength:96, color:'teal',
+    note:'ACU, Victoria Uni, Frasers, Toyota Financial, Spirit of Tasmania — 5 named ANZ logos.',
+    highlights:['acu-role','cw-role','espire-logos']
+  },
+  {
+    id:'reg', label:'ANZ regulatory landscape (APRA, APP, sovereignty)', strength:95, color:'teal',
+    note:'Cogni-Brain covers sovereignty; Microsoft highlights SOX/MiFID; Espire highlights M365 GDPR data workflows.',
+    highlights:['cogni-brain','cw-gov','competencies', 'ms-reg', 'espire-reg']
+  },
+  {
+    id:'llm', label:'Deep enterprise AI / production LLM deployment', strength:95, color:'teal',
+    note:'Actively evaluating enterprise Vertex AI and OpenAI at scale; deep open-source agentic research.',
+    highlights:['cw-ai','summary-ai','espire-ai','espire-victoria','research-agents','research-gov','cogni-brain']
+  },
+  {
+    id:'team', label:'Building foundational teams (greenfield)', strength:86, color:'teal',
+    note:'Espire COE incubation (AI + RPA practices) and CW global engineering build out.',
+    highlights:['espire-coe','cw-team','competencies']
+  },
+  {
+    id:'exec', label:'Executive presence & C-suite advisory', strength:94, color:'teal',
+    note:'Core member of AI IT Working Group, CIO advisory at ACU, live tech mapping for enterprise C-suites.',
+    highlights:['cw-ai','espire-presales','espire-poc','espire-trust','acu-cio','ms-consulting']
+  },
+  {
+    id:'tech', label:'Prompt engineering, LLM evals, AI system architecture', strength:88, color:'teal',
+    note:'Evaluating vendor ADK/OpenAI deployments for security/architecture; Open source projects show genuine depth.',
+    highlights:['cw-ai','research-agents','research-gov','espire-victoria','summary-ai']
+  },
+  {
+    id:'safety', label:'Passion for safe & beneficial AI', strength:88, color:'teal',
+    note:'Governance agent, fiduciary risk, sovereign AI — safety as design principle not checkbox.',
+    highlights:['research-gov','cogni-brain','summary-safety']
+  },
+  {
+    id:'sdk', label:'Developer tooling, SDKs & API integrations', strength:95, color:'teal',
+    note:'Apigee X, GCP Cloud Run, Google ADK, Azure Bot Services, vLLM, and agentic SDKs.',
+    highlights:['cw-gcp','cw-gov','espire-victoria','cw-ai','cogni-brain','research-agents']
+  },
+];
+
+const LOGISTICS = [
+  {
+    label:'Minimum education',
+    status:'✓ Met',
+    color:'teal',
+    note:'Master & Bachelor of Computer Applications — IGNOU. Exceeds the bachelor\'s minimum.'
+  },
+  {
+    label:'Relevant field of study',
+    status:'✓ Met',
+    color:'teal',
+    note:'Computer Applications + continuous AI/ML credentials (Stanford, deeplearning.ai, Google/Kaggle, Azure).'
+  },
+  {
+    label:'Years of experience',
+    status:'✓ Met',
+    color:'teal',
+    note:'~20 years of progressive technical leadership across pre-sales, architecture, and delivery.'
+  },
+  {
+    label:'Hybrid — 25% onsite + ANZ travel',
+    status:'✓ Acceptable',
+    color:'teal',
+    note:'Currently fully remote. Open to 25% onsite in Sydney/Melbourne and regular customer travel across ANZ.'
+  },
+  {
+    label:'Visa sponsorship required?',
+    status:'✓ Not needed',
+    color:'teal',
+    note:'Australian citizen — unrestricted right to work in Australia and New Zealand. No sponsorship required.'
+  },
+];
+
+const HLS = {
+  'summary-ai':       { color:'teal',  tip:'AI leadership and architecture since 2015' },
+  'summary-safety':   { color:'teal',  tip:'Safety as a design principle' },
+  'competencies':     { color:'teal',  tip:'Core competency — listed explicitly' },
+  'cw-role':          { color:'teal',  tip:'Chemist Warehouse — flagship Australian enterprise' },
+  'cw-ai':            { color:'teal',  tip:'Enterprise LLM evaluation: Vertex AI (ADK) and OpenAI' },
+  'cw-team':          { color:'teal',  tip:'Direct line management of 25+ global engineers' },
+  'cw-gcp':           { color:'teal',  tip:'API-first GCP Architecture: Cloud Run, Pub/Sub, Apigee X' },
+  'cw-gov':           { color:'teal',  tip:'Identity-first governance, Apigee API ecosystem' },
+  'espire-presales':  { color:'teal',  tip:'GTM leadership, pre-sales, and matrix management' },
+  'espire-poc':       { color:'teal',  tip:'End-to-end technical GTM authority' },
+  'espire-trust':     { color:'teal',  tip:'Commercial impact, account growth, and C-suite trust' },
+  'espire-logos':     { color:'teal',  tip:'Major global and regional enterprise logos' },
+  'espire-victoria':  { color:'teal',  tip:'Complex multi-system bot: Azure Bot Services, LUIS.ai, Oracle IdM, MuleSoft' },
+  'espire-reg':       { color:'teal',  tip:'Automated GDPR Data Subject Requests via M365 eDiscovery' },
+  'espire-coe':       { color:'teal',  tip:'AI + RPA Centre of Excellence — built from scratch' },
+  'espire-ai':        { color:'teal',  tip:'First enterprise AI chatbot 2015 — before mainstream' },
+  'espire-gold':      { color:'teal',  tip:'Drove Microsoft Gold Partnership status for Espire' },
+  'acu-role':         { color:'teal',  tip:'8 global campuses, AI strategy — ANZ flagship' },
+  'acu-cio':          { color:'teal',  tip:'Strategic advisor to the CIO, securing executive budget approvals' },
+  'ms-consulting':    { color:'teal',  tip:'Fortune 500 consulting — Chevron, Merck, Aviva, Monsanto, Emerson' },
+  'ms-reg':           { color:'teal',  tip:'Global compliance frameworks (SOX, MiFID) for 60 countries' },
+  'research-agents':  { color:'teal',  tip:'Multi-agent system: Planner, Actor, Vision, RAG Memory' },
+  'research-gov':     { color:'teal',  tip:'Fiduciary-Ops-Agent — real-time AI governance' },
+  'research-sign':    { color:'teal',  tip:'Computer vision — 99% precision, production Android app' },
+  'cogni-brain':      { color:'teal',  tip:'Sovereign AI, data privacy, DGX Spark benchmark leader' },
+};
+
+const colorMap = {
+  teal:  { bg:'rgba(29,158,117,0.13)', text:'#0F6E56', bar:'#1D9E75', border:'#0F6E56' },
+  amber: { bg:'rgba(186,117,23,0.12)', text:'#854F0B', bar:'#BA7517', border:'#854F0B' },
+  red:   { bg:'rgba(226,75,74,0.12)',  text:'#A32D2D', bar:'#E24B4A', border:'#A32D2D' },
+};
+
+let activeReq = null;
+
+function renderReqs() {
+  document.getElementById('req-list').innerHTML = REQ.map(r => {
+    const c = colorMap[r.color];
+    return `<div class="req-card" id="rc-${r.id}" onclick="setActive('${r.id}')" role="button" tabindex="0" aria-pressed="false">
+      <div class="req-label">${r.label}</div>
+      <div class="req-note">${r.note}</div>
+      <div class="strength-bar"><div class="strength-fill" style="width:${r.strength}%;background:${c.bar}"></div></div>
+    </div>`;
+  }).join('');
+  document.querySelectorAll('.req-card:not(.logistics)').forEach(card => {
+    card.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' ') card.click(); });
+  });
+}
+
+function renderLogistics() {
+  document.getElementById('logistics-list').innerHTML = LOGISTICS.map(l => {
+    const c = colorMap[l.color];
+    return `<div class="req-card logistics">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;gap:6px">
+        <div class="req-label" style="margin-bottom:0">${l.label}</div>
+        <span style="font-size:10px;font-weight:500;color:${c.text};background:${c.bg};padding:2px 7px;border-radius:10px;flex-shrink:0;white-space:nowrap">${l.status}</span>
+      </div>
+      <div class="req-note">${l.note}</div>
+    </div>`;
+  }).join('');
+}
+
+function hl(id, text) {
+  const c = HLS[id];
+  if (!c) return text;
+  const col = colorMap[c.color];
+  return `<span class="highlight" data-hl="${id}" style="background:${col.bg};color:${col.text}" title="${c.tip}">${text}</span>`;
+}
+
+function renderCV() {
+  document.getElementById('cv-render').innerHTML = `
+<div class="cv-name">Rajendra Rawat</div>
+<div class="cv-meta">
+  Applied AI Engineering | Enterprise Agentic AI Strategy | Ex-Microsoft<br>
+  Melbourne, Australia &nbsp;·&nbsp; <a href="https://linkedin.com/in/airawatraj" target="_blank">linkedin.com/in/airawatraj</a> &nbsp;·&nbsp; <a href="https://airawatraj.github.io" target="_blank">airawatraj.github.io</a>
+</div>
+
+<div class="cv-h1">Summary</div>
+<div class="cv-p">${hl('summary-ai','Strategic technology leader with nearly two decades of experience helping global organisations navigate complex digital and AI transformations.')} Having led technical pre-sales, solution architecture, and enterprise programs across North America, EMEA, and APAC, I bring a global perspective to solving enterprise-scale challenges and navigating diverse regulatory and data privacy requirements.</div>
+<div class="cv-p">${hl('summary-safety','I specialise in bridging the gap between deep, hands-on AI engineering and C-suite strategy. My focus is to help enterprises build secure, highly scalable agentic AI architectures, govern AI risk, and align emerging technologies with measurable business impact.')} I have been ${hl('espire-ai','architecting enterprise AI systems since 2015')}, moving from early conversational AI at scale to deploying hardened autonomous agents today.</div>
+
+<div class="cv-h1">Core competencies</div>
+<div class="cv-p">${hl('competencies','Agentic Ecosystems & Autonomous Operations | Data Sovereignty, Risk & Privacy Compliance | Global Digital Transformation | C-Suite & Board Advisory | Technical GTM Leadership & Pre-Sales Excellence | COE Incubation & Team Building | Enterprise AI Strategy & Governance')}</div>
+
+<div class="cv-h1">Experience</div>
+
+<div class="cv-job-title">${hl('cw-role','Chemist Warehouse')} — Tribe Lead, Digital Strategy and R&D</div>
+<div class="cv-job-meta">June 2021 – Present &nbsp;·&nbsp; Melbourne, VIC</div>
+<div class="cv-bullet"><span class="cv-bullet-label">${hl('cw-ai','Enterprise AI Strategy & Vendor Evaluation')}:</span> ${hl('cw-ai','Core member of the AI IT Working Group, defining the enterprise AI readiness roadmap. Currently directing and critically evaluating parallel enterprise AI deployments utilizing Google Vertex AI (ADK) and OpenAI/ChatGPT to govern architectural viability, data security, and commercial alignment.')}</div>
+<div class="cv-bullet"><span class="cv-bullet-label">${hl('cw-team','Global Engineering Leadership & Team Building')}:</span> ${hl('cw-team','Direct line management of 25+ engineers across 8 distributed microservices teams spanning Australia (Melbourne, Brisbane) and Southeast Asia (Philippines, Malaysia). Responsible for the full talent lifecycle, including performance reviews and cross-cultural team building.')}</div>
+<div class="cv-bullet"><span class="cv-bullet-label">${hl('cw-gcp','Cloud-Native GCP Architecture')}:</span> ${hl('cw-gcp','Led teams to deliver a modern, API-first architecture heavily anchored in GCP (Cloud Run, Google Pub/Sub, Apigee X). Built the highly scalable, event-driven data foundations essential for production LLM deployments.')}</div>
+<div class="cv-bullet"><span class="cv-bullet-label">Vendor & Ecosystem Orchestration:</span> Augmented core engineering capability by managing distributed vendor consultants across India and China. Acted as the primary strategic interface for tier-one technology partners including Google and Microsoft.</div>
+<div class="cv-bullet"><span class="cv-bullet-label">${hl('cw-gov','Ecosystem Governance & Security')}:</span> Delivered an identity-first security model (Okta/Auth0) and API ecosystem, establishing enterprise-grade governance across hundreds of mission-critical data flows.</div>
+
+<div class="cv-job-title">Espire Infolabs — Director Technology, Microsoft &amp; Emerging Tech</div>
+<div class="cv-job-meta">February 2013 – June 2021 &nbsp;·&nbsp; Gurugram, India (Global Remit)</div>
+<div class="cv-bullet"><span class="cv-bullet-label">GTM Strategy & Matrix Leadership:</span> ${hl('espire-presales','Reporting directly to the CEO, grew the global Microsoft Practice into a multi-million-dollar revenue stream. Partnered directly with regional Business Heads (ANZ, EMEA, SEA) to drive cross-functional technical pre-sales, RFP responses, and POC execution in a highly matrixed environment.')}</div>
+<div class="cv-bullet"><span class="cv-bullet-label">C-Suite Advisory & Solution Architecture:</span> ${hl('espire-poc','Led high-stakes field engagements and CxO pitches across regions. Combined overarching enterprise architecture whiteboarding with live demonstrations of AI and emerging tech capabilities to map technical solutions directly to client roadmaps.')}</div>
+<div class="cv-bullet"><span class="cv-bullet-label">Commercial Impact & Account Growth:</span> ${hl('espire-trust','Built deep technical trust with enterprise CTOs and CIOs, directly driving multi-million-dollar, multi-year contract wins. Successfully grew several key accounts from zero to 50+ member dedicated offshore delivery teams (ODCs).')}</div>
+<div class="cv-bullet"><span class="cv-bullet-label">Key Enterprise Expansion:</span> ${hl('espire-logos','Acted as the technical GTM authority to secure major regional logos (ACU, Victoria University, Frasers Property, Toyota Financial Services, Spirit of Tasmania) alongside global wins including Siemens, BBC, and MOHH.')}</div>
+<div class="cv-bullet"><span class="cv-bullet-label">${hl('espire-reg','Global Data Privacy & GDPR Compliance')}:</span> ${hl('espire-reg','Architected enterprise compliance frameworks across client portfolios, leveraging M365 Advanced eDiscovery to automate GDPR Data Subject Request (DSR) workflows, directly mitigating regulatory risk for C-suite stakeholders.')}</div>
+<div class="cv-bullet"><span class="cv-bullet-label">${hl('espire-coe','AI Incubation & Complex Architecture')}:</span> Established the Emerging Tech Centre of Excellence (AI, RPA) earning ${hl('espire-gold','Microsoft Gold Partnership')}. Architected flagship AI programs, including the ${hl('espire-victoria','Victoria University public-facing student bot, seamlessly integrating Azure Bot Services, LUIS.ai, CAS/Oracle IdM, and MuleSoft')}.</div>
+
+<div class="cv-job-title">${hl('acu-role','Australian Catholic University (via Espire)')} — Technical Program Lead / Advisor to CIO</div>
+<div class="cv-job-meta">February 2018 – June 2020 &nbsp;·&nbsp; Melbourne, VIC</div>
+<div class="cv-bullet"><span class="cv-bullet-label">${hl('acu-cio','Strategic CIO Advisory')}:</span> Acted as the direct strategic advisor to the CIO, ${hl('acu-role','leading a multi-year cloud, data, and AI transformation across 8 global campuses')}. Navigated complex stakeholder environments to secure budget and program approvals from Executive Leadership and Steering Committees.</div>
+<div class="cv-bullet"><span class="cv-bullet-label">${hl('acu-role','Smart Campus & AI Strategy')}:</span> Directed a Smart Campus portfolio encompassing 30+ enterprise initiatives. Deployed foundational conversational AI (AVA bot) to transform the digital experience for students and faculty, resulting in two Microsoft Global Case Studies.</div>
+
+<div class="cv-job-title">Microsoft — Consultant</div>
+<div class="cv-job-meta">June 2006 – January 2013 &nbsp;·&nbsp; Hyderabad, India</div>
+<div class="cv-bullet"><span class="cv-bullet-label">Enterprise Cloud & Data Foundations:</span> ${hl('ms-consulting','Contributed to mission-critical, high-scale cloud architectures for Fortune Global 500 leaders including Chevron, Merck, Aviva, Monsanto, and Emerson, in direct collaboration with Microsoft Product Groups.')}</div>
+<div class="cv-bullet"><span class="cv-bullet-label">Complex Regulatory & Scale Engineering:</span> ${hl('ms-reg','Architected highly secure data estates, including ingestion frameworks for thousands of IoT well sensors for Chevron, and designed multi-compliance (SOX, MiFID) risk management frameworks for BearingPoint (spanning 60 countries).')}</div>
+
+<div class="cv-h1">Applied AI Research &amp; Open Source</div>
+<div class="cv-bullet">${hl('cogni-brain','Sovereign AI & Data Privacy (Cogni-Brain): Validated a local-first, kernel-level sandboxed agentic AI deployment on NVIDIA DGX Spark. Achieved 23.45 tok/s with 120B parameter models, zero crashes across 104 benchmark tests, top of the Spark Arena leaderboard for single-node NVFP4. Directly addresses enterprise data sovereignty and privacy requirements. Open sourced as a community reference architecture.')}</div>
+<div class="cv-bullet">${hl('research-gov','AI Governance & Fiduciary Risk (Fiduciary-Ops-Agent): Built an autonomous enterprise governance agent enforcing real-time fiduciary risk alignment and Check-then-Act protocols. Capstone project, Google/Kaggle AI Agents Intensive 2025.')}</div>
+<div class="cv-bullet">${hl('research-agents','Multi-Agent Architecture (Cogni.chat & SAGE-GPT): Built a full multi-agent personal AI system (Planner, Actor, Vision, RAG Memory) and trained a 7.5M parameter Sanskrit SLM from scratch on DGX Spark.')}</div>
+<div class="cv-bullet">${hl('research-sign','Computer Vision & Accessibility (Cogni Sign): Built a real-time Indian Sign Language recognition system from scratch — data collection, model training (99% precision and recall), and deployment in an offline Android AR app.')}</div>
+
+<div class="cv-h1">Education &amp; Credentials</div>
+<div class="cv-p">Master &amp; Bachelor of Computer Applications — IGNOU, India</div>
+<div class="cv-p">AI &amp; Machine Learning: AI Agents Intensive (Google/Kaggle, 2025); Managing Machine Learning Projects (Google Cloud); Deep Learning Specialisation (deeplearning.ai); Machine Learning Certificate (Stanford University via Coursera).</div>
+<div class="cv-p">Cloud Architecture: Azure AI Engineer Associate (2021); Azure Data Scientist Associate (2021); Azure Developer Associate (2021).</div>
+<div class="cv-p">Awards: Outstanding Contribution to Digital Workspace Transformation (ACU, 2020); Automation Champion (Espire, 2017); Gem of the Year, 2× (Espire, 2018 and 2019).</div>
+`;
+}
+
+function setActive(id) {
+  if (activeReq === id) { resetActive(); return; }
+  activeReq = id;
+  const req = REQ.find(r => r.id === id);
+  const c = colorMap[req.color];
+
+  REQ.forEach(r => {
+    const card = document.getElementById('rc-' + r.id);
+    card.classList.remove('active');
+    card.style.borderColor = '';
+    card.style.background = '';
+    card.setAttribute('aria-pressed', 'false');
+  });
+
+  const card = document.getElementById('rc-' + id);
+  card.classList.add('active');
+  card.style.borderColor = c.border;
+  card.style.background = c.bg;
+  card.setAttribute('aria-pressed', 'true');
+
+  document.getElementById('cv-render').classList.add('all-dim');
+  document.querySelectorAll('.highlight').forEach(el => {
+    el.classList.remove('active-hl');
+    if (req.highlights.includes(el.dataset.hl)) {
+      el.classList.add('active-hl');
+      el.style.outlineColor = c.border;
+    }
+  });
+
+  const strengthLabel = req.strength >= 80
+    ? '✓ Strong match'
+    : req.strength >= 60
+    ? '~ Partial — worth addressing in cover letter'
+    : '✗ Gap — address directly';
+  document.getElementById('info-bar').innerHTML =
+    `<i class="ti ti-target" aria-hidden="true"></i><span><strong>${req.label}</strong>&nbsp;&mdash;&nbsp;${strengthLabel}&nbsp;<span style="color:var(--color-text-tertiary)">(${req.strength}% fit)</span></span>`;
+
+  const firstMatch = document.querySelector('.active-hl');
+  if (firstMatch) firstMatch.scrollIntoView({ behavior:'smooth', block:'center' });
+}
+
+function resetActive() {
+  activeReq = null;
+  REQ.forEach(r => {
+    const card = document.getElementById('rc-' + r.id);
+    card.classList.remove('active');
+    card.style.borderColor = '';
+    card.style.background = '';
+    card.setAttribute('aria-pressed', 'false');
+  });
+  document.getElementById('cv-render').classList.remove('all-dim');
+  document.querySelectorAll('.highlight').forEach(el => {
+    el.classList.remove('active-hl');
+    el.style.outlineColor = '';
+  });
+  document.getElementById('info-bar').innerHTML =
+    `<i class="ti ti-mouse" aria-hidden="true"></i> Click any requirement to highlight matching evidence in your CV. Use "Clear highlights" or click again to reset.`;
+}
+
+renderReqs();
+renderLogistics();
+renderCV();
+</script>
+</body>
+</html>
