@@ -112,7 +112,7 @@ section{padding:6rem 0; border-top:0.5px solid var(--border)}
 .left .t-title { justify-content: flex-end; }
 .center .t-title { justify-content: center; }
 .t-sub { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gold-dim); margin-bottom: 6px; }
-.t-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.6; margin-top: 12px; }
+.t-desc { font-size: 0.875rem; color:var(--muted); line-height: 1.6; margin-top: 12px; }
 .verify-link { 
     display: inline-block; font-family: 'DM Mono', monospace; font-size: 11px; color: #0071e3; 
     text-decoration: none; margin-top: 14px; border-bottom: 1px solid transparent; transition: 0.2s;
@@ -151,11 +151,12 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
   <div class="hero-inner">
     <p class="hero-label">Australia · AI Engineering & Strategy</p>
     <h1>Technologist.<br><em>Experimenter.</em><br>Seeker.</h1>
-    <p class="hero-sub">Building multimodal, secure, sovereign, ethical, production-grade agentic AI systems; training language models from scratch; and exploring the frontier of Physical AI.</p>
+    <p class="hero-sub">Building AI systems, multimodal agents, language models, and contemplative technology to expand human intelligence, agency, and consciousness.</p>
     <div class="hero-links">
       <a href="https://github.com/airawatraj" class="btn">GitHub</a>
       <a href="https://www.linkedin.com/in/airawatraj" class="btn">LinkedIn</a>
       <a href="https://www.kaggle.com/airawatraj" class="btn">Kaggle</a>
+      <a href="https://www.youtube.com/@airawatraj" class="btn">YouTube</a>
     </div>
     <div class="quote-block">
       <blockquote>"The future belongs to those who understand at a very deep level how to combine their unique expertise with what algorithms do best."</blockquote>
@@ -169,14 +170,24 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
   <section id="work">
     <p class="section-label fade-in">Active Builds</p>
     <div class="projects-grid fade-in">
+
+      <div class="project-card">
+        <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+          <span class="project-name">COGNI-BRAIN-2</span>
+          <div class="project-tags"><span class="tag">Qwen</span><span class="tag">Atlas</span></div>
+        </div>
+        <p class="project-title"><span class="ai-spark">✓</span> Fast local agentic reasoning on DGX Spark</p>
+        <p class="project-desc">Qwen 3.6-35B on NVIDIA DGX Spark via the Atlas engine, showing how a smaller local model can deliver fast, reliable agentic execution when paired with the right inference architecture. Achieved 218.85 TPS, a perfect 100/100 tool-use score, and reached #2 overall on spark-arena.</p>
+        <a href="https://github.com/airawatraj/dgx-spark-qwen-super-agent" class="project-link">View repo →</a>
+      </div>
       
       <div class="project-card">
         <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
           <span class="project-name">COGNI-BRAIN</span>
           <div class="project-tags"><span class="tag">vLLM</span><span class="tag">NVFP4</span></div>
         </div>
-        <p class="project-title"><span class="ai-spark">✓</span> Hardened agentic deployment on DGX Spark</p>
-        <p class="project-desc">Nemotron-3-Super-120B running at 23.45 tok/s, top of the spark-arena leaderboard for single-node NVFP4. NemoHermes inside an OpenShell kernel-level sandbox. No cloud, no data leaving the building.</p>
+        <p class="project-title"><span class="ai-spark">✓</span> Sustained long-context agentic work on DGX Spark</p>
+        <p class="project-desc">Nemotron-3-Super-120B pushed beyond one-click demo workflows into sustained long-context agentic runs. Operated within NVIDIA NeMoHermes / NeMoClaw's hardened OpenShell model, stabilised a 131K local context, achieved ~24 tok/s, and documented the benchmark methodology for the community.</p>
         <a href="https://github.com/airawatraj/dgx-spark-nemotron-super-agent" class="project-link">View repo →</a>
       </div>
 
@@ -186,7 +197,7 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
           <div class="project-tags"><span class="tag">Local-First</span><span class="tag">Multimodal</span></div>
         </div>
         <p class="project-title"><span class="ai-spark">✓</span> Local-first multimodal AI agent platform</p>
-        <p class="project-desc">Full multi-agent system: Planner, Actor, Vision, and RAG Memory orchestrated locally. Hybrid cloud/local routing, Obsidian vault integration, computer vision, voice output, autonomous code generation. Daily-driven on DGX Spark with Nemotron-3-Super-120B.</p>
+        <p class="project-desc">Daily-driven multi-agent system: Planner, Actor, Vision, and RAG Memory orchestrated locally. Hybrid cloud/local routing, Obsidian vault integration, computer vision, voice output, autonomous code generation. Running on DGX Spark with Nemotron-3-Super-120B.</p>
         <a href="https://cogni.chat" class="project-link">cogni.chat →</a>
       </div>
 
@@ -235,7 +246,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
     <div class="timeline-wrap">
       <div class="timeline-spine"></div>
 
-      <!-- Cogni-Brain leaderboard -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot exp"></div></div>
         <div class="t-content right">
@@ -244,13 +254,12 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
                 <p class="t-tag">Independent Research</p>
                 <p class="t-title"><span class="ai-spark">✓</span> Cogni-Brain · Spark Arena #1</p>
                 <p class="t-sub">DGX Spark · Nemotron-3-Super-120B · NVFP4</p>
-                <p class="t-desc">23.45 tok/s, top of the leaderboard for single-node NVFP4. 104 benchmark tests, 5h 49m, zero crashes or OOM. Open sourced as community reference implementation.</p>
+                <p class="t-desc">~24 tok/s, top of the leaderboard for single-node NVFP4. 104 benchmark tests, 5h 49m, zero crashes or OOM. Open sourced as community reference implementation.</p>
                 <span class="verify-link">View benchmark →</span>
             </a>
         </div>
       </div>
 
-      <!-- AI Agents Intensive -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot cert"></div></div>
         <div class="t-content left">
@@ -264,7 +273,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
-      <!-- Current role -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot exp"></div></div>
         <div class="t-content center">
@@ -277,7 +285,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
-      <!-- Azure certs -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot cert"></div></div>
         <div class="t-content left">
@@ -292,7 +299,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
-      <!-- ACU award -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot award"></div></div>
         <div class="t-content right">
@@ -306,7 +312,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
-      <!-- Cogni Sign -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot exp"></div></div>
         <div class="t-content left">
@@ -320,7 +325,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
-      <!-- Google ML cert -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot cert"></div></div>
         <div class="t-content right">
@@ -334,7 +338,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
-      <!-- ACU role -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot exp"></div></div>
         <div class="t-content center">
@@ -347,7 +350,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
-      <!-- ML certs -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot cert"></div></div>
         <div class="t-content left">
@@ -361,7 +363,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
-      <!-- Gem of the Year -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot award"></div></div>
         <div class="t-content right">
@@ -374,7 +375,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
-      <!-- Espire -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot exp"></div></div>
         <div class="t-content center">
@@ -387,7 +387,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
-      <!-- Automation Champion -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot award"></div></div>
         <div class="t-content right">
@@ -400,7 +399,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
-      <!-- Data Science cert -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot cert"></div></div>
         <div class="t-content left">
@@ -414,7 +412,6 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
         </div>
       </div>
 
-      <!-- Microsoft -->
       <div class="t-item fade-in">
         <div class="t-marker"><div class="t-dot exp"></div></div>
         <div class="t-content center">
@@ -448,6 +445,7 @@ footer{ padding:4rem 0; text-align:center; border-top:0.5px solid var(--border);
       <a href="https://github.com/airawatraj">GitHub</a>
       <a href="https://www.linkedin.com/in/airawatraj">LinkedIn</a>
       <a href="https://www.kaggle.com/airawatraj">Kaggle</a>
+      <a href="https://www.youtube.com/@airawatraj">YouTube</a>
     </div>
   </div>
 </footer>
