@@ -1,19 +1,29 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Rajendra Rawat · AI Engineering & Strategy</title>
+  <meta
+    name="description"
+    content="Rajendra Rawat builds sovereign, local-first AI systems, multimodal agents, language models, and personal knowledge infrastructure."
+  >
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500&display=swap"
-    rel="stylesheet">
+    rel="stylesheet"
+  >
+
   <style>
     * {
       margin: 0;
       padding: 0;
-      box-sizing: border-box
+      box-sizing: border-box;
     }
 
     :root {
@@ -28,27 +38,28 @@
       --glass-exp: rgba(157, 124, 42, 0.08);
       --glass-cert: rgba(0, 113, 227, 0.06);
       --glass-award: rgba(26, 26, 30, 0.05);
+      --cert-color: #0071e3;
       --ai-neon: #00d28d;
     }
 
     html {
-      scroll-behavior: smooth
+      scroll-behavior: smooth;
     }
 
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Outfit', sans-serif;
+      font-family: "Outfit", sans-serif;
       font-weight: 300;
       line-height: 1.7;
       overflow-x: hidden;
     }
 
     body::before {
-      content: '';
+      content: "";
       position: fixed;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitchTiles'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 0;
       opacity: 0.3;
@@ -59,7 +70,7 @@
       margin: 0 auto;
       padding: 0 2rem;
       position: relative;
-      z-index: 1
+      z-index: 1;
     }
 
     nav {
@@ -79,7 +90,7 @@
     }
 
     .nav-name {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 13px;
       color: var(--gold);
       letter-spacing: 0.08em;
@@ -89,7 +100,7 @@
 
     .nav-links {
       display: flex;
-      gap: 1.5rem
+      gap: 1.5rem;
     }
 
     .nav-links a {
@@ -100,8 +111,9 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover {
-      color: var(--text)
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
     }
 
     .hero {
@@ -112,13 +124,14 @@
     }
 
     .hero-inner {
+      width: 100%;
       max-width: 780px;
       margin: 0 auto;
-      padding: 0 2rem
+      padding: 0 2rem;
     }
 
     .hero-label {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 11px;
       color: var(--gold);
       letter-spacing: 0.15em;
@@ -129,7 +142,7 @@
     }
 
     .hero h1 {
-      font-family: 'DM Serif Display', serif;
+      font-family: "DM Serif Display", serif;
       font-size: clamp(2.8rem, 6vw, 5rem);
       line-height: 1.1;
       font-weight: 400;
@@ -146,7 +159,7 @@
     .hero-sub {
       font-size: 1.05rem;
       color: var(--muted);
-      max-width: 520px;
+      max-width: 620px;
       margin-bottom: 3rem;
       opacity: 0;
       animation: fadeUp 0.8s 0.35s forwards;
@@ -168,13 +181,14 @@
       border: 0.5px solid var(--border-light);
       border-radius: 4px;
       font-size: 13px;
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       text-decoration: none;
       color: var(--muted);
       transition: all 0.2s;
     }
 
-    .btn:hover {
+    .btn:hover,
+    .btn:focus-visible {
       border-color: var(--gold);
       color: var(--gold);
       background: rgba(157, 124, 42, 0.05);
@@ -189,7 +203,7 @@
     }
 
     .quote-block blockquote {
-      font-family: 'DM Serif Display', serif;
+      font-family: "DM Serif Display", serif;
       font-style: italic;
       font-size: 1.1rem;
       color: var(--muted);
@@ -197,7 +211,7 @@
     }
 
     .quote-block cite {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 11px;
       color: var(--gold-dim);
       text-transform: uppercase;
@@ -205,11 +219,11 @@
 
     section {
       padding: 6rem 0;
-      border-top: 0.5px solid var(--border)
+      border-top: 0.5px solid var(--border);
     }
 
     .section-label {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 11px;
       color: var(--gold);
       letter-spacing: 0.15em;
@@ -223,9 +237,10 @@
       justify-content: center;
       gap: 2rem;
       margin-bottom: 4rem;
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 10px;
       text-transform: uppercase;
+      flex-wrap: wrap;
     }
 
     .legend-item {
@@ -248,7 +263,7 @@
     }
 
     .dot.cert {
-      background: #0071e3;
+      background: var(--cert-color);
       opacity: 0.6;
     }
 
@@ -286,32 +301,49 @@
       flex-direction: column;
       gap: 1px;
       background: var(--border);
-      border: 0.5px solid var(--border)
+      border: 0.5px solid var(--border);
     }
 
     .project-card {
       padding: 1.75rem 2rem;
       background: var(--bg);
       position: relative;
+      transition: background 0.2s;
     }
 
     .project-card:hover {
-      background: var(--surface)
+      background: var(--surface);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-tags {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.35rem;
+      flex-wrap: wrap;
     }
 
     .project-name {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 14px;
       color: var(--gold);
     }
 
     .tag {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 10px;
       padding: 2px 8px;
       border: 0.5px solid var(--border-light);
       color: var(--muted);
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .project-title {
@@ -334,7 +366,7 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 11px;
       color: var(--gold);
       text-decoration: none;
@@ -343,7 +375,8 @@
       transition: border 0.2s;
     }
 
-    .project-link:hover {
+    .project-link:hover,
+    .project-link:focus-visible {
       border-color: var(--gold);
     }
 
@@ -410,10 +443,12 @@
       cursor: pointer;
     }
 
-    .glass-box-link:hover {
+    .glass-box-link:hover,
+    .glass-box-link:focus-visible {
       transform: translateY(-6px);
       border-color: var(--gold);
       box-shadow: 0 15px 45px rgba(157, 124, 42, 0.15);
+      outline: none;
     }
 
     .t-content.left {
@@ -467,14 +502,14 @@
     }
 
     .t-date {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 10px;
       color: var(--gold-dim);
       margin-bottom: 8px;
     }
 
     .t-tag {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 9px;
       color: var(--muted);
       text-transform: uppercase;
@@ -502,7 +537,7 @@
     }
 
     .t-sub {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 11px;
       color: var(--gold-dim);
       margin-bottom: 6px;
@@ -517,17 +552,18 @@
 
     .verify-link {
       display: inline-block;
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 11px;
-      color: #0071e3;
+      color: var(--cert-color);
       text-decoration: none;
       margin-top: 14px;
       border-bottom: 1px solid transparent;
       transition: 0.2s;
     }
 
-    .verify-link:hover {
-      border-bottom-color: #0071e3;
+    .verify-link:hover,
+    .verify-link:focus-visible {
+      border-bottom-color: var(--cert-color);
       color: var(--gold);
     }
 
@@ -538,7 +574,7 @@
     }
 
     #mission blockquote {
-      font-family: 'DM Serif Display', serif;
+      font-family: "DM Serif Display", serif;
       font-style: italic;
       font-size: 1.6rem;
       color: var(--text);
@@ -560,25 +596,26 @@
     }
 
     .footer-links a {
-      font-family: 'DM Mono', monospace;
+      font-family: "DM Mono", monospace;
       font-size: 11px;
       color: var(--muted);
       text-decoration: none;
     }
 
-    .footer-links a:hover {
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
       color: var(--gold);
     }
 
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(20px)
+        transform: translateY(20px);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0)
+        transform: translateY(0);
       }
     }
 
@@ -593,13 +630,63 @@
       transform: translateY(0);
     }
 
-    @media(max-width:768px) {
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .fade-in,
+      .hero-label,
+      .hero h1,
+      .hero-sub,
+      .hero-links,
+      .quote-block {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.25rem;
+      }
+
+      .nav-links {
+        gap: 0.8rem;
+      }
+
+      .nav-links a {
+        font-size: 10px;
+      }
+
+      .container,
+      .hero-inner {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      .project-header {
+        flex-direction: column;
+      }
+
+      .project-tags {
+        justify-content: flex-start;
+      }
+
       .timeline-spine {
         left: 20px;
       }
 
       .t-item {
-        grid-template-columns: 40px 1fr;
+        grid-template-columns: 40px minmax(0, 1fr);
       }
 
       .t-marker {
@@ -611,433 +698,1014 @@
       .t-content.center {
         grid-column: 2;
         text-align: left;
+        width: 100%;
       }
 
-      .left .t-title {
+      .left .t-title,
+      .center .t-title {
         justify-content: flex-start;
+      }
+
+      .glass-box {
+        padding: 1.35rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-name {
+        font-size: 11px;
+      }
+
+      .nav-links {
+        gap: 0.6rem;
+      }
+
+      .nav-links a {
+        font-size: 9px;
+      }
+
+      .hero {
+        padding-top: 7rem;
+      }
+
+      .project-card {
+        padding: 1.4rem;
       }
     }
   </style>
+
 </head>
 
 <body>
 
-  <nav>
+  <nav aria-label="Primary navigation">
     <a href="#" class="nav-name">Rajendra Rawat</a>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#journey">Journey</a>
-      <a href="#mission">Mission</a>
-    </div>
+
+```
+<div class="nav-links">
+  <a href="#work">Work</a>
+  <a href="#journey">Journey</a>
+  <a href="#mission">Mission</a>
+</div>
+```
+
   </nav>
 
-  <div class="hero">
+  <header class="hero">
     <div class="hero-inner">
-      <p class="hero-label">Australia · AI Engineering & Strategy</p>
-      <h1>Technologist.<br><em>Experimenter.</em><br>Seeker.</h1>
-      <p class="hero-sub">Building local-first AI systems, multimodal agents, language models, and contemplative technology to
-        expand human intelligence, agency, and consciousness.</p>
-      <div class="hero-links">
-        <a href="https://github.com/airawatraj" class="btn">GitHub</a>
-        <a href="https://www.kaggle.com/airawatraj" class="btn">Kaggle</a>
-        <a href="https://www.youtube.com/@airawatraj" class="btn">YouTube</a>
-      </div>
-      <div class="quote-block">
-        <blockquote>"The future belongs to those who understand at a very deep level how to combine their unique
-          expertise with what algorithms do best."</blockquote>
-        <cite>Pedro Domingos · The Master Algorithm</cite>
-      </div>
-    </div>
+
+```
+  <p class="hero-label">Australia · AI Engineering & Strategy</p>
+
+  <h1>
+    Technologist.<br>
+    <em>Experimenter.</em><br>
+    Seeker.
+  </h1>
+
+  <p class="hero-sub">
+    Building sovereign, local-first AI systems—from language models trained
+    from scratch, through multimodal and long-context agents on DGX Spark,
+    to a private intelligence and automation layer for personal and
+    household knowledge.
+  </p>
+
+  <div class="hero-links">
+    <a href="https://github.com/airawatraj" class="btn">GitHub</a>
+    <a href="https://www.kaggle.com/airawatraj" class="btn">Kaggle</a>
+    <a href="https://www.youtube.com/@airawatraj" class="btn">YouTube</a>
   </div>
 
-  <div class="container">
-
-    <section id="work">
-      <p class="section-label fade-in">Active Builds</p>
-      <div class="projects-grid fade-in">
-
-        <div class="project-card">
-          <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
-            <span class="project-name">COGNI-BRAIN OMNI</span>
-            <div class="project-tags"><span class="tag">vLLM</span><span class="tag">Multimodal</span></div>
-          </div>
-          <p class="project-title"><span class="ai-spark">✓</span> Daily-fit multimodal agent brain on DGX Spark</p>
-          <p class="project-desc">Gemma 4 12B on NVIDIA DGX Spark via vLLM, adding native multimodal and multilingual perception to the local Cogni stack: text, image, audio, video-as-frames, Hindi/Hinglish chat, tool calling, 196K configured context, and reproducible local benchmarks.</p>
-          <a href="https://github.com/airawatraj/dgx-spark-gemma4-omni-agent" class="project-link">View repo →</a>
-        </div>
-
-        <div class="project-card">
-          <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
-            <span class="project-name">COGNI-BRAIN-2</span>
-            <div class="project-tags"><span class="tag">Atlas</span><span class="tag">NVFP4</span></div>
-          </div>
-          <p class="project-title"><span class="ai-spark">✓</span> Fast local agentic reasoning on DGX Spark</p>
-          <p class="project-desc">Qwen 3.6-35B on NVIDIA DGX Spark via the Atlas engine, showing how a smaller local model can deliver extremely fast local agentic execution when paired with the right inference architecture. Achieved 218.85 tok/s, a perfect 100/100 tool-use score, and ranked #2 overall on spark-arena for tg128, concurrency 1, single-node DGX Spark.</p>
-          <a href="https://github.com/airawatraj/dgx-spark-qwen-super-agent" class="project-link">View repo →</a>
-        </div>
-
-        <div class="project-card">
-          <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
-            <span class="project-name">COGNI-BRAIN</span>
-            <div class="project-tags"><span class="tag">vLLM</span><span class="tag">NVFP4</span></div>
-          </div>
-          <p class="project-title"><span class="ai-spark">✓</span> Sustained long-context agentic work on DGX Spark</p>
-          <p class="project-desc">Nemotron-3-Super-120B pushed beyond one-click demo workflows into sustained long-context agentic runs. Operated within NVIDIA NeMoHermes / NeMoClaw's hardened OpenShell model, stabilised a 131K local context, achieved ~24 tok/s, and documented the benchmark methodology for the community.</p>
-          <a href="https://github.com/airawatraj/dgx-spark-nemotron-super-agent" class="project-link">View repo →</a>
-        </div>
-
-        <div class="project-card">
-          <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
-            <span class="project-name">COGNI.CHAT</span>
-            <div class="project-tags"><span class="tag">Local-First</span><span class="tag">Multimodal</span></div>
-          </div>
-          <p class="project-title"><span class="ai-spark">✓</span> Local-first multimodal AI ecosystem</p>
-          <p class="project-desc">Daily-driven local-first multi-agent system: Planner, Actor, Vision, and RAG Memory orchestrated across local models and tools. Hybrid cloud/local routing, Obsidian vault integration, computer vision, voice output, autonomous code generation, and multimodal workflows running on DGX Spark.</p>
-          <a href="https://cogni.chat" class="project-link">cogni.chat →</a>
-        </div>
-
-        <div class="project-card">
-          <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
-            <span class="project-name">SAGE-GPT</span>
-            <div class="project-tags"><span class="tag">Sanskrit</span><span class="tag">From Scratch</span></div>
-          </div>
-          <p class="project-title"><span class="ai-spark">✓</span> Sanskrit SLM trained entirely from scratch on DGX Spark</p>
-          <p class="project-desc">7.5M parameter decoder-only Transformer trained on ~140M Sanskrit tokens. Grokking strategy induced for genuine generalisation.</p>
-          <a href="https://github.com/airawatraj/sage-gpt" class="project-link">View repo →</a>
-        </div>
-
-        <div class="project-card">
-          <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
-            <span class="project-name">FIDUCIARY-OPS-AGENT</span>
-            <div class="project-tags"><span class="tag">Gemini</span><span class="tag">Governance</span></div>
-          </div>
-          <p class="project-title"><span class="ai-spark">✓</span> Autonomous enterprise governance agent</p>
-          <p class="project-desc">Check-then-Act protocol via Gemini 2.5 Flash Lite. Enforces real-time fiduciary risk-alignment. Capstone project for Google/Kaggle AI Agents Intensive 2025.</p>
-          <a href="https://github.com/airawatraj/fiduciary-ops-agent" class="project-link">View repo →</a>
-        </div>
-
-        <div class="project-card">
-          <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
-            <span class="project-name">COGNI SIGN</span>
-            <div class="project-tags"><span class="tag">Computer Vision</span><span class="tag">2018</span></div>
-          </div>
-          <p class="project-title"><span class="ai-spark">✓</span> Indian Sign Language recognition</p>
-          <p class="project-desc">Computer vision model achieving 99% precision/recall on Indian Sign Language. Built to bridge communication for the deaf and mute community. Training data collected personally in 2018. An independent initiative predating mainstream vision AI tooling by years.</p>
-        </div>
-
-      </div>      </div>
-    </section>
-
-    <section id="journey">
-      <p class="section-label fade-in">The Journey</p>
-
-      <div class="legend fade-in">
-        <div class="legend-item"><span class="dot exp"></span> Experience</div>
-        <div class="legend-item"><span class="dot cert"></span> Credentials</div>
-        <div class="legend-item"><span class="dot award"></span> Awards</div>
-        <div class="legend-item"><span class="ai-verify-tag"><span class="ai-spark">✓</span> AI</span></div>
-      </div>
-
-      <div class="timeline-wrap">
-        <div class="timeline-spine"></div>
-
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot exp"></div>
-          </div>
-          <div class="t-content right">
-            <a href="https://spark-arena.com/benchmark/sub1780704040457" target="_blank"
-              class="glass-box glass-box-link t-exp" style="border-top: 3px solid var(--gold);">
-              <p class="t-date">2026</p>
-              <p class="t-tag">Independent Research</p>
-              <p class="t-title"><span class="ai-spark">✓</span> Cogni-Brain Omni · Daily-Fit Multimodal Agent Brain</p>
-              <p class="t-sub">DGX Spark · Gemma 4 12B · vLLM</p>
-              <p class="t-desc">Added Cogni-Brain Omni: a local multimodal agent brain on DGX Spark with Gemma 4 12B, image understanding, local Telegram voice-note STT, Hindi/Hinglish chat, video-as-frames, tool calling, MTP speculative decoding, 196K configured context, and reproducible local smoke tests.
-              </p>
-              <span class="verify-link">View benchmark →</span>
-            </a>
-          </div>
-        </div>
-
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot exp"></div>
-          </div>
-          <div class="t-content left">
-            <a href="https://spark-arena.com/benchmark/sub1779495971526" target="_blank"
-              class="glass-box glass-box-link t-exp" style="border-top: 3px solid var(--gold);">
-              <p class="t-date">2026</p>
-              <p class="t-tag">Independent Research</p>
-              <p class="t-title"><span class="ai-spark">✓</span> Cogni-Brain-2 · Fast Local Agentic Reasoning</p>
-              <p class="t-sub">DGX Spark · Qwen 3.6-35B · Atlas</p>
-              <p class="t-desc">218.85 tok/s and a perfect 100/100 tool-use score, showing how a smaller local model can deliver extremely fast local agentic execution when paired with the right inference architecture. Ranked #2 overall on spark-arena for tg128, concurrency 1, single-node DGX Spark.</p>
-              <span class="verify-link">View benchmark →</span>
-            </a>
-          </div>
-        </div>
-
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot exp"></div>
-          </div>
-          <div class="t-content right">
-            <a href="https://spark-arena.com/benchmark/sub1778644062716" target="_blank"
-              class="glass-box glass-box-link t-exp" style="border-top: 3px solid var(--gold);">
-              <p class="t-date">2025 — 2026</p>
-              <p class="t-tag">Independent Research</p>
-              <p class="t-title"><span class="ai-spark">✓</span> Cogni-Brain · Sustained Long-Context Agentic Work</p>
-              <p class="t-sub">DGX Spark · Nemotron-3-Super-120B · NVFP4</p>
-              <p class="t-desc">~24 tok/s on tg128, concurrency 1, single-node DGX Spark. Top listed 120B NVFP4 result for that filtered configuration, with 104 benchmark tests, 5h 49m, zero crashes or OOM.</p>
-              <span class="verify-link">View benchmark →</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot cert"></div>
-          </div>
-          <div class="t-content left">
-            <a href="https://www.kaggle.com/certification/badges/airawatraj/105" target="_blank"
-              class="glass-box glass-box-link t-cert">
-              <p class="t-date">Dec 2025</p>
-              <p class="t-tag">Credential</p>
-              <p class="t-title"><span class="ai-spark">✓</span> AI Agents Intensive Course</p>
-              <p class="t-sub">Google · Kaggle</p>
-              <span class="verify-link">Verify →</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot exp"></div>
-          </div>
-          <div class="t-content center">
-            <div class="glass-box t-exp" style="border-top: 3px solid var(--gold);">
-              <p class="t-date">2021 — PRESENT</p>
-              <p class="t-title">Tribe Lead · Digital Strategy & R&D</p>
-              <p class="t-sub">ASX-listed retail group · Australia</p>
-              <p class="t-desc">Led 8 microservices teams (~25 engineers) to deliver a cloud-native MACH architecture.
-                Transformed legacy e-commerce into the foundational layer for enterprise AI readiness, eliminating
-                peak-time manual maintenance and reducing customer wait times from 1 hour to 0.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot cert"></div>
-          </div>
-          <div class="t-content left">
-            <div class="glass-box t-cert">
-              <p class="t-date">2021</p>
-              <p class="t-tag">Credentials</p>
-              <p class="t-title">Azure Professional</p>
-              <a href="https://www.credly.com/badges/2610f519-ea4c-47a1-bb5e-f175b07d39f4" target="_blank"
-                class="verify-link" style="display:block"><span class="ai-spark">✓</span> Azure Data Scientist Associate
-                →</a>
-              <a href="https://www.credly.com/badges/76a934e8-729b-4919-8acb-047cccf132d9" target="_blank"
-                class="verify-link" style="display:block"><span class="ai-spark">✓</span> Azure AI Engineer Associate
-                →</a>
-              <a href="https://www.credly.com/badges/62edd8cf-a403-482c-a612-5f8a6907739a" target="_blank"
-                class="verify-link" style="display:block">Azure Developer Associate →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot award"></div>
-          </div>
-          <div class="t-content right">
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:6680425215421497344/" target="_blank"
-              class="glass-box glass-box-link t-award">
-              <p class="t-date">2020</p>
-              <p class="t-tag">Award</p>
-              <p class="t-title"><span class="ai-spark">✓</span> Outstanding Contribution to Digital Transformation</p>
-              <p class="t-sub">Australian Catholic University</p>
-              <span class="verify-link">View Award →</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot exp"></div>
-          </div>
-          <div class="t-content left">
-            <div class="glass-box t-exp">
-              <p class="t-date">2018 — PRESENT</p>
-              <p class="t-tag">Independent Research</p>
-              <p class="t-title"><span class="ai-spark">✓</span> Cogni Sign · Sign Language AI</p>
-              <p class="t-sub">Indian Sign Language · 99% Precision/Recall</p>
-              <p class="t-desc">Computer vision model to bridge communication for the deaf and mute community. Training
-                data collected personally. Predated mainstream vision AI tooling by years.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot cert"></div>
-          </div>
-          <div class="t-content right">
-            <a href="https://www.coursera.org/account/accomplishments/records/7DF255DGGF88" target="_blank"
-              class="glass-box glass-box-link t-cert">
-              <p class="t-date">Jun 2020</p>
-              <p class="t-tag">Credential</p>
-              <p class="t-title"><span class="ai-spark">✓</span> Managing ML Projects</p>
-              <p class="t-sub">Google Cloud</p>
-              <span class="verify-link">Verify →</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot exp"></div>
-          </div>
-          <div class="t-content center">
-            <div class="glass-box t-exp">
-              <p class="t-date">2018 — 2020</p>
-              <p class="t-title"><span class="ai-spark">✓</span> Technical Program Lead</p>
-              <p class="t-sub">ACU (via Espire)</p>
-              <p class="t-desc">Advisor to CIO. Cloud transformation resulting in Microsoft Global Case Studies.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot cert"></div>
-          </div>
-          <div class="t-content left">
-            <div class="glass-box t-cert">
-              <p class="t-date">2019</p>
-              <p class="t-tag">Credentials</p>
-              <p class="t-title">Advanced Machine Learning</p>
-              <a href="https://www.coursera.org/account/accomplishments/specialization/H76RGYLFZQ45" target="_blank"
-                class="verify-link" style="display:block"><span class="ai-spark">✓</span> Deep Learning Specialisation
-                →</a>
-              <a href="https://www.coursera.org/account/accomplishments/verify/WAMDY83EXD9J" target="_blank"
-                class="verify-link" style="display:block"><span class="ai-spark">✓</span> Machine Learning · Stanford
-                →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot award"></div>
-          </div>
-          <div class="t-content right">
-            <div class="glass-box t-award">
-              <p class="t-date">2019 · 2018</p>
-              <p class="t-tag">Awards</p>
-              <p class="t-title">Gem of the Year</p>
-              <p class="t-sub">Espire Infolabs</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot exp"></div>
-          </div>
-          <div class="t-content center">
-            <div class="glass-box t-exp">
-              <p class="t-date">2013 — 2021</p>
-              <p class="t-title"><span class="ai-spark">✓</span> Director of Technology · Emerging Tech</p>
-              <p class="t-sub">Espire Infolabs · Gurugram</p>
-              <p class="t-desc">Incubated multi-million dollar AI/IoT Centres of Excellence. Architected the company's
-                first enterprise AI chatbot in 2015, seven years before the ChatGPT wave.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot award"></div>
-          </div>
-          <div class="t-content right">
-            <div class="glass-box t-award">
-              <p class="t-date">2017</p>
-              <p class="t-tag">Award</p>
-              <p class="t-title">Automation Champion</p>
-              <p class="t-sub">Espire Infolabs</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot cert"></div>
-          </div>
-          <div class="t-content left">
-            <a href="https://courses.edx.org/certificates/a74a271d1466482c8be05ceb455fc4ba" target="_blank"
-              class="glass-box glass-box-link t-cert">
-              <p class="t-date">Oct 2017</p>
-              <p class="t-tag">Credential</p>
-              <p class="t-title"><span class="ai-spark">✓</span> Data Science Orientation</p>
-              <p class="t-sub">Microsoft · edX</p>
-              <span class="verify-link">Verify →</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="t-item fade-in">
-          <div class="t-marker">
-            <div class="t-dot exp"></div>
-          </div>
-          <div class="t-content center">
-            <div class="glass-box t-exp">
-              <p class="t-date">2006 — 2013</p>
-              <p class="t-title">Consultant</p>
-              <p class="t-sub">Microsoft · Hyderabad</p>
-              <p class="t-desc">Architected mission-critical systems for Fortune Global 500: Chevron, Merck, Franklin
-                Templeton, Aviva.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
+  <div class="quote-block">
+    <blockquote>
+      "The future belongs to those who understand at a very deep level how
+      to combine their unique expertise with what algorithms do best."
+    </blockquote>
+    <cite>Pedro Domingos · The Master Algorithm</cite>
   </div>
 
-  <section id="mission">
-    <div class="container">
-      <p class="section-label">Mission</p>
-      <blockquote class="fade-in">"To free humans from becoming machines, and be more Humane."</blockquote>
-      <p class="fade-in" style="color:var(--muted); max-width:560px; margin: 0 auto;">Raise human intelligence and
-        consciousness to its full potential via automation and sovereign AI.</p>
+</div>
+```
+
+  </header>
+
+  <main>
+
+```
+<div class="container">
+
+  <section id="work">
+    <p class="section-label fade-in">Active Builds</p>
+
+    <div class="projects-grid fade-in">
+
+      <article class="project-card">
+        <div class="project-header">
+          <span class="project-name">COGNI LIFE OS</span>
+          <div class="project-tags">
+            <span class="tag">Local-First</span>
+            <span class="tag">Knowledge OS</span>
+          </div>
+        </div>
+
+        <p class="project-title">
+          <span class="ai-spark">✓</span>
+          Sovereign personal knowledge and automation system
+        </p>
+
+        <p class="project-desc">
+          A local-first intelligence layer built around an
+          Obsidian-compatible Markdown vault. Combines durable AI agents,
+          multimodal capture, layered lexical retrieval, evidence-backed
+          actions, natural voice interaction, rebuildable indexes, and
+          local Cogni-Brain inference on DGX Spark.
+        </p>
+
+        <a
+          href="https://github.com/airawatraj/cogni-life-os"
+          class="project-link"
+        >
+          View repo →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <span class="project-name">COGNI-BRAIN 122B</span>
+          <div class="project-tags">
+            <span class="tag">Qwen</span>
+            <span class="tag">Multimodal</span>
+            <span class="tag">vLLM</span>
+          </div>
+        </div>
+
+        <p class="project-title">
+          <span class="ai-spark">✓</span>
+          High-context multimodal agent brain on DGX Spark
+        </p>
+
+        <p class="project-desc">
+          Qwen3.5-122B-A10B served through spark-vLLM Docker with text,
+          image, and video inputs, 262K local context, approximately
+          40 tok/s, and 100/100 Tool-Eval. The latest high-context
+          Cogni-Brain iteration for local agentic and multimodal workflows.
+        </p>
+
+        <a
+          href="https://github.com/airawatraj/dgx-spark-qwen-omni-super-agent"
+          class="project-link"
+        >
+          View repo →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <span class="project-name">COGNI-BRAIN 120B</span>
+          <div class="project-tags">
+            <span class="tag">Nemotron</span>
+            <span class="tag">vLLM</span>
+            <span class="tag">NVFP4</span>
+          </div>
+        </div>
+
+        <p class="project-title">
+          <span class="ai-spark">✓</span>
+          Sustained long-context agentic work on DGX Spark
+        </p>
+
+        <p class="project-desc">
+          Nemotron-3-Super-120B pushed beyond one-click demonstrations into
+          sustained agentic workloads. Stabilised at 131K local context,
+          approximately 24 tok/s, and 93/100 Tool-Eval, with a hardened
+          agentic stack and reproducible benchmark methodology.
+        </p>
+
+        <a
+          href="https://github.com/airawatraj/dgx-spark-nemotron-super-agent"
+          class="project-link"
+        >
+          View repo →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <span class="project-name">COGNI-BRAIN 35B</span>
+          <div class="project-tags">
+            <span class="tag">Qwen</span>
+            <span class="tag">Atlas</span>
+            <span class="tag">NVFP4</span>
+          </div>
+        </div>
+
+        <p class="project-title">
+          <span class="ai-spark">✓</span>
+          Fast local tool-agent brain on DGX Spark
+        </p>
+
+        <p class="project-desc">
+          Qwen 3.6-35B served through Atlas with approximately 219 tok/s,
+          100/100 Tool-Eval, and local NVFP4 acceleration. Demonstrates how
+          a smaller model paired with an efficient inference architecture
+          can support responsive coding and agent loops.
+        </p>
+
+        <a
+          href="https://github.com/airawatraj/dgx-spark-qwen-super-agent"
+          class="project-link"
+        >
+          View repo →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <span class="project-name">COGNI-BRAIN 12B</span>
+          <div class="project-tags">
+            <span class="tag">Gemma</span>
+            <span class="tag">Multimodal</span>
+            <span class="tag">vLLM</span>
+          </div>
+        </div>
+
+        <p class="project-title">
+          <span class="ai-spark">✓</span>
+          Dedicated local multimodal perception agent
+        </p>
+
+        <p class="project-desc">
+          Gemma 4 12B on DGX Spark via vLLM with image input, audio and
+          voice-note workflows, video-as-frames perception, multilingual
+          chat, tool calling, 196K configured context, and reproducible
+          local benchmarks.
+        </p>
+
+        <a
+          href="https://github.com/airawatraj/dgx-spark-gemma4-omni-agent"
+          class="project-link"
+        >
+          View repo →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <span class="project-name">COGNI.CHAT</span>
+          <div class="project-tags">
+            <span class="tag">Local-First</span>
+            <span class="tag">Multimodal</span>
+          </div>
+        </div>
+
+        <p class="project-title">
+          <span class="ai-spark">✓</span>
+          Local-first multimodal AI ecosystem
+        </p>
+
+        <p class="project-desc">
+          A broader ecosystem for personal and household intelligence
+          spanning memory, planning, wellbeing, learning, creative work,
+          family coordination, and interaction across text, voice, images,
+          and personal context. Cogni Life OS provides its sovereign
+          knowledge and automation foundation.
+        </p>
+
+        <a href="https://cogni.chat" class="project-link">
+          cogni.chat →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <span class="project-name">SAGEGPT-7.5M · DGX</span>
+          <div class="project-tags">
+            <span class="tag">Sanskrit</span>
+            <span class="tag">From Scratch</span>
+          </div>
+        </div>
+
+        <p class="project-title">
+          <span class="ai-spark">✓</span>
+          Sanskrit language model trained from scratch on DGX Spark
+        </p>
+
+        <p class="project-desc">
+          A 7.5M-parameter decoder-only Transformer trained on approximately
+          140M pure Sanskrit tokens, with 6 layers, 8 attention heads,
+          256-dimensional embeddings, a 1024-token context window, and an
+          approximately 8K vocabulary.
+        </p>
+
+        <a
+          href="https://github.com/airawatraj/sage-gpt"
+          class="project-link"
+        >
+          View repo →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <span class="project-name">SAGEGPT-7M · MLX</span>
+          <div class="project-tags">
+            <span class="tag">Sanskrit</span>
+            <span class="tag">Apple MLX</span>
+          </div>
+        </div>
+
+        <p class="project-title">
+          <span class="ai-spark">✓</span>
+          Sanskrit language model trained from scratch on Apple Silicon
+        </p>
+
+        <p class="project-desc">
+          A 7M-parameter decoder-only Transformer trained on approximately
+          57M Sanskrit tokens using Apple MLX, with 4 layers, 8 attention
+          heads, 256-dimensional embeddings, and an 8K vocabulary.
+        </p>
+
+        <a
+          href="https://github.com/airawatraj/sage-gpt-mlx"
+          class="project-link"
+        >
+          View repo →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <span class="project-name">FIDUCIARY-OPS-AGENT</span>
+          <div class="project-tags">
+            <span class="tag">Gemini</span>
+            <span class="tag">Governance</span>
+          </div>
+        </div>
+
+        <p class="project-title">
+          <span class="ai-spark">✓</span>
+          Autonomous enterprise governance agent
+        </p>
+
+        <p class="project-desc">
+          Implements a strict Check-then-Act protocol using Gemini 2.5
+          Flash Lite to enforce real-time fiduciary risk alignment through
+          tool-first orchestration. Built as a capstone project for the
+          Google and Kaggle AI Agents Intensive.
+        </p>
+
+        <a
+          href="https://github.com/airawatraj/fiduciary-ops-agent"
+          class="project-link"
+        >
+          View repo →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-header">
+          <span class="project-name">COGNI SIGN</span>
+          <div class="project-tags">
+            <span class="tag">Computer Vision</span>
+            <span class="tag">2018</span>
+          </div>
+        </div>
+
+        <p class="project-title">
+          <span class="ai-spark">✓</span>
+          Indian Sign Language recognition
+        </p>
+
+        <p class="project-desc">
+          Computer vision model achieving 99% precision and recall on
+          Indian Sign Language. Training data was collected personally in
+          2018 to explore technology that could bridge communication for
+          deaf and non-speaking communities.
+        </p>
+      </article>
+
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <p class="footer-name"
-        style="font-family:'DM Serif Display',serif; font-style:italic; font-size:1.2rem; color:var(--gold);">Rajendra
-        Rawat</p>
-      <div class="footer-links">
-        <a href="https://rawatlabz.wordpress.com/">Physical AI</a>
-        <a href="https://github.com/airawatraj">GitHub</a>
-        <a href="https://www.kaggle.com/airawatraj">Kaggle</a>
-        <a href="https://www.youtube.com/@airawatraj">YouTube</a>
+  <section id="journey">
+    <p class="section-label fade-in">The Journey</p>
+
+    <div class="legend fade-in">
+      <div class="legend-item">
+        <span class="dot exp"></span>
+        Experience
+      </div>
+
+      <div class="legend-item">
+        <span class="dot cert"></span>
+        Credentials
+      </div>
+
+      <div class="legend-item">
+        <span class="dot award"></span>
+        Awards
+      </div>
+
+      <div class="legend-item">
+        <span class="ai-verify-tag">
+          <span class="ai-spark">✓</span>
+          AI
+        </span>
       </div>
     </div>
+
+    <div class="timeline-wrap">
+      <div class="timeline-spine"></div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot exp"></div>
+        </div>
+
+        <div class="t-content right">
+          <a
+            href="https://github.com/airawatraj/cogni-life-os"
+            class="glass-box glass-box-link t-exp"
+            style="border-top: 3px solid var(--gold);"
+          >
+            <p class="t-date">2026</p>
+            <p class="t-tag">Independent Research & Systems</p>
+
+            <p class="t-title">
+              <span class="ai-spark">✓</span>
+              Cogni Life OS · Sovereign Personal Intelligence
+            </p>
+
+            <p class="t-sub">
+              Obsidian Markdown · Local Agents · DGX Spark
+            </p>
+
+            <p class="t-desc">
+              Built a local-first personal knowledge and automation system
+              with an Obsidian-compatible Markdown vault, durable agents,
+              multimodal capture, layered lexical retrieval, evidence-backed
+              actions, voice interaction, and local Cogni-Brain inference.
+            </p>
+
+            <span class="verify-link">View project →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot exp"></div>
+        </div>
+
+        <div class="t-content left">
+          <a
+            href="https://github.com/airawatraj/dgx-spark-qwen-omni-super-agent"
+            class="glass-box glass-box-link t-exp"
+            style="border-top: 3px solid var(--gold);"
+          >
+            <p class="t-date">2026</p>
+            <p class="t-tag">Independent Research</p>
+
+            <p class="t-title">
+              <span class="ai-spark">✓</span>
+              Cogni-Brain 122B · High-Context Multimodal Agent
+            </p>
+
+            <p class="t-sub">
+              DGX Spark · Qwen3.5-122B-A10B · spark-vLLM
+            </p>
+
+            <p class="t-desc">
+              Expanded the local Cogni-Brain stack to text, image, and video
+              inputs with 262K context, approximately 40 tok/s, and 100/100
+              Tool-Eval.
+            </p>
+
+            <span class="verify-link">View project →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot exp"></div>
+        </div>
+
+        <div class="t-content right">
+          <a
+            href="https://spark-arena.com/benchmark/sub1778644062716"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="glass-box glass-box-link t-exp"
+            style="border-top: 3px solid var(--gold);"
+          >
+            <p class="t-date">2025 — 2026</p>
+            <p class="t-tag">Independent Research</p>
+
+            <p class="t-title">
+              <span class="ai-spark">✓</span>
+              Cogni-Brain 120B · Sustained Long-Context Agentic Work
+            </p>
+
+            <p class="t-sub">
+              DGX Spark · Nemotron-3-Super-120B · NVFP4
+            </p>
+
+            <p class="t-desc">
+              Stabilised a 131K local context at approximately 24 tok/s and
+              documented sustained agentic execution, benchmark methodology,
+              and a hardened local inference stack.
+            </p>
+
+            <span class="verify-link">View benchmark →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot exp"></div>
+        </div>
+
+        <div class="t-content left">
+          <a
+            href="https://spark-arena.com/benchmark/sub1779495971526"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="glass-box glass-box-link t-exp"
+            style="border-top: 3px solid var(--gold);"
+          >
+            <p class="t-date">2026</p>
+            <p class="t-tag">Independent Research</p>
+
+            <p class="t-title">
+              <span class="ai-spark">✓</span>
+              Cogni-Brain 35B · Fast Local Agentic Reasoning
+            </p>
+
+            <p class="t-sub">
+              DGX Spark · Qwen 3.6-35B · Atlas
+            </p>
+
+            <p class="t-desc">
+              Achieved approximately 219 tok/s and 100/100 Tool-Eval,
+              demonstrating responsive local agent execution through an
+              efficient model and inference architecture.
+            </p>
+
+            <span class="verify-link">View benchmark →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot exp"></div>
+        </div>
+
+        <div class="t-content right">
+          <a
+            href="https://spark-arena.com/benchmark/sub1780704040457"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="glass-box glass-box-link t-exp"
+            style="border-top: 3px solid var(--gold);"
+          >
+            <p class="t-date">2026</p>
+            <p class="t-tag">Independent Research</p>
+
+            <p class="t-title">
+              <span class="ai-spark">✓</span>
+              Cogni-Brain 12B · Local Multimodal Perception
+            </p>
+
+            <p class="t-sub">
+              DGX Spark · Gemma 4 12B · vLLM
+            </p>
+
+            <p class="t-desc">
+              Added image understanding, audio and voice-note workflows,
+              Hindi and Hinglish chat, video-as-frames perception, tool
+              calling, and 196K configured context to the local Cogni stack.
+            </p>
+
+            <span class="verify-link">View benchmark →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot cert"></div>
+        </div>
+
+        <div class="t-content left">
+          <a
+            href="https://www.kaggle.com/certification/badges/airawatraj/105"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="glass-box glass-box-link t-cert"
+          >
+            <p class="t-date">Dec 2025</p>
+            <p class="t-tag">Credential</p>
+
+            <p class="t-title">
+              <span class="ai-spark">✓</span>
+              AI Agents Intensive Course
+            </p>
+
+            <p class="t-sub">Google · Kaggle</p>
+            <span class="verify-link">Verify →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot exp"></div>
+        </div>
+
+        <div class="t-content center">
+          <div
+            class="glass-box t-exp"
+            style="border-top: 3px solid var(--gold);"
+          >
+            <p class="t-date">2021 — PRESENT</p>
+
+            <p class="t-title">
+              Tribe Lead · Digital Strategy & R&amp;D
+            </p>
+
+            <p class="t-sub">
+              ASX-listed retail group · Australia
+            </p>
+
+            <p class="t-desc">
+              Led eight microservices teams of approximately 25 engineers
+              to deliver a cloud-native MACH architecture. Transformed
+              legacy e-commerce into a foundational layer for enterprise AI
+              readiness, eliminating peak-time manual maintenance and
+              reducing customer wait times from one hour to zero.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot cert"></div>
+        </div>
+
+        <div class="t-content left">
+          <div class="glass-box t-cert">
+            <p class="t-date">2021</p>
+            <p class="t-tag">Credentials</p>
+            <p class="t-title">Azure Professional</p>
+
+            <a
+              href="https://www.credly.com/badges/2610f519-ea4c-47a1-bb5e-f175b07d39f4"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="verify-link"
+              style="display:block"
+            >
+              <span class="ai-spark">✓</span>
+              Azure Data Scientist Associate →
+            </a>
+
+            <a
+              href="https://www.credly.com/badges/76a934e8-729b-4919-8acb-047cccf132d9"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="verify-link"
+              style="display:block"
+            >
+              <span class="ai-spark">✓</span>
+              Azure AI Engineer Associate →
+            </a>
+
+            <a
+              href="https://www.credly.com/badges/62edd8cf-a403-482c-a612-5f8a6907739a"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="verify-link"
+              style="display:block"
+            >
+              Azure Developer Associate →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot award"></div>
+        </div>
+
+        <div class="t-content right">
+          <a
+            href="https://www.linkedin.com/feed/update/urn:li:activity:6680425215421497344/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="glass-box glass-box-link t-award"
+          >
+            <p class="t-date">2020</p>
+            <p class="t-tag">Award</p>
+
+            <p class="t-title">
+              <span class="ai-spark">✓</span>
+              Outstanding Contribution to Digital Transformation
+            </p>
+
+            <p class="t-sub">
+              Australian Catholic University
+            </p>
+
+            <span class="verify-link">View award →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot exp"></div>
+        </div>
+
+        <div class="t-content left">
+          <div class="glass-box t-exp">
+            <p class="t-date">2018 — PRESENT</p>
+            <p class="t-tag">Independent Research</p>
+
+            <p class="t-title">
+              <span class="ai-spark">✓</span>
+              Cogni Sign · Sign Language AI
+            </p>
+
+            <p class="t-sub">
+              Indian Sign Language · 99% Precision/Recall
+            </p>
+
+            <p class="t-desc">
+              Built a computer vision model to explore communication support
+              for deaf and non-speaking communities, using training data
+              collected personally.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot cert"></div>
+        </div>
+
+        <div class="t-content right">
+          <a
+            href="https://www.coursera.org/account/accomplishments/records/7DF255DGGF88"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="glass-box glass-box-link t-cert"
+          >
+            <p class="t-date">Jun 2020</p>
+            <p class="t-tag">Credential</p>
+
+            <p class="t-title">
+              <span class="ai-spark">✓</span>
+              Managing ML Projects
+            </p>
+
+            <p class="t-sub">Google Cloud</p>
+            <span class="verify-link">Verify →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot exp"></div>
+        </div>
+
+        <div class="t-content center">
+          <div class="glass-box t-exp">
+            <p class="t-date">2018 — 2020</p>
+
+            <p class="t-title">
+              <span class="ai-spark">✓</span>
+              Technical Program Lead
+            </p>
+
+            <p class="t-sub">ACU via Espire</p>
+
+            <p class="t-desc">
+              Advised the CIO and contributed to a cloud transformation
+              recognised through Microsoft global case studies.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot cert"></div>
+        </div>
+
+        <div class="t-content left">
+          <div class="glass-box t-cert">
+            <p class="t-date">2019</p>
+            <p class="t-tag">Credentials</p>
+            <p class="t-title">Advanced Machine Learning</p>
+
+            <a
+              href="https://www.coursera.org/account/accomplishments/specialization/H76RGYLFZQ45"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="verify-link"
+              style="display:block"
+            >
+              <span class="ai-spark">✓</span>
+              Deep Learning Specialisation →
+            </a>
+
+            <a
+              href="https://www.coursera.org/account/accomplishments/verify/WAMDY83EXD9J"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="verify-link"
+              style="display:block"
+            >
+              <span class="ai-spark">✓</span>
+              Machine Learning · Stanford →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot award"></div>
+        </div>
+
+        <div class="t-content right">
+          <div class="glass-box t-award">
+            <p class="t-date">2019 · 2018</p>
+            <p class="t-tag">Awards</p>
+            <p class="t-title">Gem of the Year</p>
+            <p class="t-sub">Espire Infolabs</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot exp"></div>
+        </div>
+
+        <div class="t-content center">
+          <div class="glass-box t-exp">
+            <p class="t-date">2013 — 2021</p>
+
+            <p class="t-title">
+              <span class="ai-spark">✓</span>
+              Director of Technology · Emerging Tech
+            </p>
+
+            <p class="t-sub">Espire Infolabs · Gurugram</p>
+
+            <p class="t-desc">
+              Incubated multi-million-dollar AI and IoT Centres of
+              Excellence and architected the company's first enterprise AI
+              chatbot in 2015.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot award"></div>
+        </div>
+
+        <div class="t-content right">
+          <div class="glass-box t-award">
+            <p class="t-date">2017</p>
+            <p class="t-tag">Award</p>
+            <p class="t-title">Automation Champion</p>
+            <p class="t-sub">Espire Infolabs</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot cert"></div>
+        </div>
+
+        <div class="t-content left">
+          <a
+            href="https://courses.edx.org/certificates/a74a271d1466482c8be05ceb455fc4ba"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="glass-box glass-box-link t-cert"
+          >
+            <p class="t-date">Oct 2017</p>
+            <p class="t-tag">Credential</p>
+
+            <p class="t-title">
+              <span class="ai-spark">✓</span>
+              Data Science Orientation
+            </p>
+
+            <p class="t-sub">Microsoft · edX</p>
+            <span class="verify-link">Verify →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="t-item fade-in">
+        <div class="t-marker">
+          <div class="t-dot exp"></div>
+        </div>
+
+        <div class="t-content center">
+          <div class="glass-box t-exp">
+            <p class="t-date">2006 — 2013</p>
+            <p class="t-title">Consultant</p>
+            <p class="t-sub">Microsoft · Hyderabad</p>
+
+            <p class="t-desc">
+              Architected mission-critical systems for Fortune Global 500
+              organisations including Chevron, Merck, Franklin Templeton,
+              and Aviva.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<section id="mission">
+  <div class="container">
+    <p class="section-label">Mission</p>
+
+    <blockquote class="fade-in">
+      "To free humans from becoming machines, and be more Humane."
+    </blockquote>
+
+    <p
+      class="fade-in"
+      style="color:var(--muted); max-width:560px; margin:0 auto;"
+    >
+      Raise human intelligence and consciousness to their full potential
+      through automation and sovereign AI.
+    </p>
+  </div>
+</section>
+```
+
+  </main>
+
+  <footer>
+    <div class="container">
+
+```
+  <p
+    class="footer-name"
+    style="font-family:'DM Serif Display',serif; font-style:italic; font-size:1.2rem; color:var(--gold);"
+  >
+    Rajendra Rawat
+  </p>
+
+  <div class="footer-links">
+    <a href="https://rawatlabz.wordpress.com/">Physical AI</a>
+    <a href="https://github.com/airawatraj">GitHub</a>
+    <a href="https://www.kaggle.com/airawatraj">Kaggle</a>
+    <a href="https://www.youtube.com/@airawatraj">YouTube</a>
+  </div>
+
+</div>
+```
+
   </footer>
 
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
-</body>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
+    document.querySelectorAll(".fade-in").forEach((element) => {
+      observer.observe(element);
+    });
+  </script>
+
+</body>
 </html>
