@@ -835,7 +835,7 @@
           <div class="project-tags">
             <span class="tag">Qwen</span>
             <span class="tag">Multimodal</span>
-            <span class="tag">vLLM</span>
+            <span class="tag">DFlash</span>
           </div>
         </div>
 
@@ -845,10 +845,11 @@
         </p>
 
         <p class="project-desc">
-          Qwen3.5-122B-A10B served through spark-vLLM Docker with text,
-          image, and video inputs, 262K local context, approximately
-          40 tok/s, and 100/100 Tool-Eval. The latest high-context
-          Cogni-Brain iteration for local agentic and multimodal workflows.
+          Qwen3.5-122B-A10B INT4+FP8 hybrid served via vLLM with DFlash
+          speculative decoding, text/image/audio inputs, 262K local context,
+          54.44 tok/s single-stream (68 tok/s peak), and 100/100 Tool-Eval.
+          The latest high-context Cogni-Brain iteration for local agentic
+          and multimodal workflows.
         </p>
 
         <a
@@ -1172,15 +1173,15 @@
             </p>
 
             <p class="t-sub">
-              DGX Spark · Qwen3.5-122B-A10B · spark-vLLM
+              DGX Spark · Qwen3.5-122B-A10B · vLLM + DFlash
             </p>
 
             <p class="t-desc">
-              Expanded the local Cogni-Brain stack to text, image, and video
-              inputs with 262K context, approximately 40 tok/s, and 100/100
-              Tool-Eval.
+              Expanded the local Cogni-Brain stack to text, image, and audio
+              inputs with DFlash speculative decoding, 262K context, 54.44 tok/s
+              single-stream (68 tok/s peak), and 100/100 Tool-Eval.
             </p>
-
+            
             <span class="verify-link">View benchmark →</span>
           </a>
         </div>
@@ -1193,7 +1194,7 @@
 
         <div class="t-content right">
           <a
-            href="https://spark-arena.com/benchmark/sub1778644062716"
+            href="https://spark-arena.com/benchmark/sub1782762533406"
             target="_blank"
             rel="noopener noreferrer"
             class="glass-box glass-box-link t-exp"
